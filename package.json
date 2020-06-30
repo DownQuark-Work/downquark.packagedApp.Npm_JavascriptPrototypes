@@ -9,10 +9,11 @@
     "flow-typed": "rimraf flow-typed/npm && flow-typed install",
     "postinstall": "yarn flow-typed",
     "prepublish": "yarn run build",
-    "test": "tap",
-    "test:coverage": "tap --coverage-report=lcov",
-    "test:dev:bail": "tap --bail --save=coverage/failures.txt",
-    "test:dev": "tap --bail --save=coverage/failures.txt"
+    "test:info": "by building first we remove the flow annotations that is needed by tap",
+    "test": "yarn run build && tap",
+    "test:coverage": "yarn run build && tap --coverage-report=lcov",
+    "test:dev:bail": "yarn run build && tap --bail --save=coverage/failures.txt",
+    "test:dev": "yarn run build && tap --bail --save=coverage/failures.txt"
   },
   "repository": {
     "type": "git",

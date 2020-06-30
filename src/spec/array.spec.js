@@ -1,5 +1,5 @@
 const t = require('tap')
-const arr = require('../js/array.js')
+const arr = require('../../dist/array.js')
 
 // shuffle dne
 t.type(Array.prototype.last,'undefined', 'Array last prototype DNE')
