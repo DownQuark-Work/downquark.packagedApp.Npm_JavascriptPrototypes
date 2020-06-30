@@ -1,6 +1,5 @@
 const t = require('tap'),
-      str = require('../js/string.js'),
-      // str = require('../../dist/string.js'),
+      str = require('../../dist/string.js'),
       strng = 'To be, or not to be, that is the question.'
 
 //force IE polyfills to be used
