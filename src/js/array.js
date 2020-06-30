@@ -1,4 +1,5 @@
-module.exports = x => {
+// @flow // figure out how tap will not need the annotation
+module.exports = () => {
   if (!Array.prototype.last && !Array.prototype.len) // Needed if using hmr
   {
     Object.defineProperty(Array.prototype, 'last', {
@@ -27,6 +28,6 @@ module.exports = x => {
     return this
   }
 
-  Array.prototype.unique = function()
+Array.prototype.unique = function<T>():Array<T>
   { return this.filter((itm, indx, arr) => { return arr.indexOf(itm) === indx}); }
 }

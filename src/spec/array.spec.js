@@ -60,12 +60,11 @@ t.test('Array Unique Prototype', t => {
   t.type(Array.prototype.unique,'function', 'Array unique prototype Exists')
   let arrNonUnique = [...arrBase]
   arrNonUnique.push(arrBase.last,arrBase.last)
-  t.equals(arrNonUnique.length, arrBase.length+2, '2 new indexes added to unique array')
+  t.equals(arrNonUnique.length, arrBase.length+2, '2 new indexes added to non-unique array')
   t.same(arrNonUnique[arrNonUnique.len],arrNonUnique[arrNonUnique.len-1], 'last 2 indexes are identical')
   t.same(arrNonUnique[arrNonUnique.len-2],arrNonUnique[arrNonUnique.len-1], 'last 3 indexes are identical')
-  console.log('arrNonUnique',arrNonUnique)
-  const arrUnique = arrNonUnique.unique()
-  console.log('arrUnique2',arrUnique, arrNonUnique)
+  
+  let arrUnique = arrNonUnique.unique()
   t.equals(arrUnique.length, arrBase.length, 'removed 2 indexes from unique array')
   t.equals(arrUnique.last, arrBase.last, 'unique array has same last value as base array')
   t.notSame(arrUnique[arrUnique.len],arrUnique[arrUnique.len-1], 'last 2 indexes are no longer identical')

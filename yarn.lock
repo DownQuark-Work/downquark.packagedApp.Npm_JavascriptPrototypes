@@ -854,12 +854,17 @@ findit@^2.0.0:
   resolved "https://registry.yarnpkg.com/findit/-/findit-2.0.0.tgz#6509f0126af4c178551cfa99394e032e13a4d56e"
   integrity sha1-ZQnwEmr0wXhVHPqZOU4DLhOk1W4=
 
+flow-bin@^0.128.0:
+  version "0.128.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.128.0.tgz#fd1232a64dc46874d8d499f16a1934b964f4c2ae"
+  integrity sha512-EnmMSOCrkx8F0r1+T1d1HODQ+ddy5yRfkT3CvwmK05IWZyXQy27OVdNwdXUWRqc0iMW75T4QkoXaVBYrMqfk+A==
+
 flow-parser@^0.128.0:
   version "0.128.0"
   resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.128.0.tgz#6bee9bc4f578c8b66f59ad52dd769464a36a029d"
   integrity sha512-BOqwccrxdGQjR09H9/YvmgrY6xCyhfRqqZ6HOiDuPBYkSVd5rKamCLs2S4D7Yd0ltwBtnP3rp7vzaBTIJK1+Iw==
 
-flow-remove-types@^2.112.0:
+flow-remove-types@^2.112.0, flow-remove-types@^2.128.0:
   version "2.128.0"
   resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.128.0.tgz#c4c441f07f248f80c9c29b144715cc281922ad6d"
   integrity sha512-g13R2XnhhRd8c16ObNffnRg1kJiIg/4miD4InFziTWSQ+0g1Txu8oJEDFiOyyfHjQor4pM1L2l+iRz+UoFxLKA==
@@ -867,6 +872,11 @@ flow-remove-types@^2.112.0:
     flow-parser "^0.128.0"
     pirates "^3.0.2"
     vlq "^0.2.1"
+
+flow@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/flow/-/flow-0.2.3.tgz#f8da65efa249127ec99376a28896572a9795d1af"
+  integrity sha1-+Npl76JJEn7Jk3aiiJZXKpeV0a8=
 
 foreground-child@^1.3.3, foreground-child@^1.5.6:
   version "1.5.6"
@@ -1783,6 +1793,13 @@ rimraf@^2.6.2, rimraf@^2.6.3, rimraf@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.7.1.tgz#35797f13a7fdadc566142c29d4f07ccad483e3ec"
   integrity sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
+  dependencies:
+    glob "^7.1.3"
+
+rimraf@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
+  integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   dependencies:
     glob "^7.1.3"
 

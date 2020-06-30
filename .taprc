@@ -3,5 +3,5 @@ check-coverage: true
 comments: true
 debug: true
 flow: true
-output-dir: coverage/raw-tests
-output-file: coverage/raw-tests/compiled.tap
+output-dir: logs/coverage/raw-tests
+output-file: logs/coverage/raw-tests/compiled.tap

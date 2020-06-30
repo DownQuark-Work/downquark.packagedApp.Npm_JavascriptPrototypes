@@ -4,10 +4,15 @@
   "description": "DownQuark's commonly used set of javascript functions",
   "main": "src/index.js",
   "scripts": {
+    "build": "flow-remove-types src/js -d dist/",
+    "flow:ls": "yarn flow ls",
+    "flow-typed": "rimraf flow-typed/npm && flow-typed install",
+    "postinstall": "yarn flow-typed",
+    "prepublish": "yarn run build",
     "test": "tap",
     "test:coverage": "tap --coverage-report=lcov",
-    "test:dev": "tap --bail --save=coverage/failures.txt",
-    "test:dev:bail": "tap --bail --save=coverage/failures.txt"
+    "test:dev:bail": "tap --bail --save=coverage/failures.txt",
+    "test:dev": "tap --bail --save=coverage/failures.txt"
   },
   "repository": {
     "type": "git",
@@ -21,6 +26,10 @@
   },
   "homepage": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes#readme",
   "devDependencies": {
+    "flow": "^0.2.3",
+    "flow-bin": "^0.128.0",
+    "flow-remove-types": "^2.128.0",
+    "rimraf": "^3.0.2",
     "tap": "^14.10.7"
   }
 }

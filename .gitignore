@@ -29,3 +29,6 @@ _notes/.ignored/
 # tap testing
 coverage/
 .nyc*
+
+# flow output
+dist/
