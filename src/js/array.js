@@ -1,4 +1,16 @@
 module.exports = x => {
+  if (!Array.prototype.last && !Array.prototype.len) // Needed if using hmr
+  {
+    Object.defineProperty(Array.prototype, 'last', {
+      get: function () { return this[this.length - 1] },
+      set: function (y) { throw new Error('ERROR: last Property is READONLY') }
+    })
+    Object.defineProperty(Array.prototype, 'len', {
+      get: function () { return this.length - 1 },
+      set: function (y) { throw new Error('ERROR: len Property is READONLY') }
+    })
+  }
+
   Array.prototype.shuffle = function()
   {
     let i = 0,
@@ -14,4 +26,7 @@ module.exports = x => {
     }
     return this
   }
+
+  Array.prototype.unique = function()
+  { return this.filter((itm, indx, arr) => { return arr.indexOf(itm) === indx}); }
 }
