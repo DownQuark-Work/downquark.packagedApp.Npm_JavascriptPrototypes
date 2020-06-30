@@ -4,7 +4,7 @@
   "description": "DownQuark's commonly used set of javascript functions",
   "main": "src/index.js",
   "scripts": {
-    "build": "flow-remove-types src/js -d dist/",
+    "build": "flow-remove-types --all src/js -d dist/",
     "flow:ls": "yarn flow ls",
     "flow-typed": "rimraf flow-typed/npm && flow-typed install",
     "postinstall": "yarn flow-typed",
