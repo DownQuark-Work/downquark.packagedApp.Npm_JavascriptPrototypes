@@ -1,0 +1,5 @@
+coverage-map: src/spec/coveragemap.js
+check-coverage: true
+flow: true
+output-dir: coverage/raw-tests
+output-file: coverage/raw-tests/compiled.tap

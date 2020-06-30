@@ -1,0 +1,1 @@
+module.exports = test => {console.log('test',test); return test.replace(/\/spec/, '\/js')}

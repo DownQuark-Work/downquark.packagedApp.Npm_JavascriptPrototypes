@@ -1,0 +1,26 @@
+{
+  "name": "@downquark/utils-js-prototypes",
+  "version": "0.1.0",
+  "description": "DownQuark's commonly used set of javascript functions",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "tap",
+    "test:coverage": "tap --coverage-report=lcov",
+    "test:dev": "tap --bail --save=coverage/failures.txt",
+    "test:dev:bail": "tap --bail --save=coverage/failures.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "bugs": {
+    "url": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes/issues"
+  },
+  "homepage": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes#readme",
+  "devDependencies": {
+    "tap": "^14.10.7"
+  }
+}

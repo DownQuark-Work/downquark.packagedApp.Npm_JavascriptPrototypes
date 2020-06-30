@@ -1,3 +1,6 @@
+# Mac OS
+.DS*
+
 # Logs
 logs
 *.log
@@ -22,3 +25,7 @@ _notes/.ignored/
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
+
+# tap testing
+coverage/
+.nyc*
