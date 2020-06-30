@@ -1,5 +1,6 @@
 declare class Array<T> extends BaseArray<T> {
-  //must change Array to BaseArray Here: /private/tmp/flow/flowlib_3e7adff1/core.js
+  //must change Array to BaseArray Here: flow-typed/stubs/flow/flowlib_52074eb/core.js
+  //declare class BaseArray<T> extends $ReadOnlyArray<T> {
   last: number,
   len: number,
   shuffle: () => Array<T>,

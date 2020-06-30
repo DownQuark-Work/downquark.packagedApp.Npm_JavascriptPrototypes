@@ -32,3 +32,4 @@ coverage/
 
 # flow output
 dist/
+flow-typed/stubs/*

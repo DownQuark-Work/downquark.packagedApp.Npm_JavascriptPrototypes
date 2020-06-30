@@ -43,6 +43,7 @@ suppress_type=$FlowDebug
 suppress_type=$FlowExpectedError
 suppress_type=$FlowIssue
 suppress_type=$FlowNonIssue
+temp_dir=flow-typed/stubs/flow
 
 💩module.system=haste
 💩munge_underscores=true
