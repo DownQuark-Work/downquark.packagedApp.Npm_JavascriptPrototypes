@@ -398,13 +398,21 @@ declare class Date {
     constructor(date: Date): void;
     constructor(dateString: string): void;
     constructor(year: number, month: number, day?: number, hour?: number, minute?: number, second?: number, millisecond?: number): void;
+    formatDate: ()
     getDate(): number;
     getDay(): number;
+    getDaysOfWeek(): string[];
+    getEpochRange:(string,string)=>[number, number];
+    getFullCalendarDates
     getFullYear(): number;
     getHours(): number;
     getMilliseconds(): number;
     getMinutes(): number;
     getMonth(): number;
+    getMonthsOfYear:(boolean) => Array<string>;
+    getNamedDay:(int,boolean) => string;
+    getNamedMonth:(int,boolean) => string;
+    getRandomDate: (past,future) => Date;
     getSeconds(): number;
     getTime(): number;
     getTimezoneOffset(): number;

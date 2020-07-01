@@ -1,13 +1,5 @@
-/*
-Date.prototype.getDaysOfWeek = () => ['Sun','Mon','Tues','Wed','Thu','Fri','Sat'];
+  Date.prototype.getDaysOfWeek = () => ['Sun','Mon','Tues','Wed','Thu','Fri','Sat'];
   Object.defineProperty(Date.prototype, 'HEADER',
-    { get: function () { this.fmt = 'MM / DD / YYYY'; return this }, ...setReadOnlyError })
-  Object.defineProperty(Date.prototype, 'CONTENT_FILE',
-    { get: function () { this.fmt = 'YYYYMMDD'; return this }, ...setReadOnlyError })
-  Object.defineProperty(Date.prototype, 'SKEUMORPH',
-    { get: function () { this.fmt = 'YYYY-MM-DD'; return this }, ...setReadOnlyError })
-  Object.defineProperty(Date.prototype, 'TITLE',
-    { get: function () { this.fmt = 'MM.DD YYYY'; return this }, ...setReadOnlyError })
   Date.prototype.formatDate = function(fm)
   {
     const dat = this,
@@ -79,4 +71,3 @@ Date.prototype.getDaysOfWeek = () => ['Sun','Mon','Tues','Wed','Thu','Fri','Sat'
     }
     return retDates
   }
-*/
