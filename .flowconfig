@@ -14,6 +14,7 @@
 [untyped]
 
 [libs]
+💩 use custom core.js to declare prototype definitions
 <PROJECT_ROOT>/flow-typed/downquark/*
 
 [lints]
@@ -29,8 +30,6 @@ log.file=logs/flow/typechecked.log
 module.file_ext=.js
 module.file_ext=.json
 module.file_ext=.jsx
-💩 no_flowlib allows us to use custom core.js which allows for prototype definitions
-💩 no_flowlib=true
 💩module.file_ext=.css
 💩module.file_ext=.scss
 💩module.name_mapper='.*\(.s?css\)' -> 'empty/object'
