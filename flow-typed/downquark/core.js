@@ -398,10 +398,14 @@ declare class Date {
     constructor(date: Date): void;
     constructor(dateString: string): void;
     constructor(year: number, month: number, day?: number, hour?: number, minute?: number, second?: number, millisecond?: number): void;
-    formatDate: () => string;
+    static daysOfWeek: Array<string>;
+    DEV: string,
+    DIRECTORY: string,
+    STANDARD: string,
+    TITLE: string,
+    formatDate: () => any;
     getDate(): number;
     getDay(): number;
-    getDaysOfWeek(): string[];
     getEpochRange:(string,string)=>[number, number];
     getFullCalendarDates:(Date) => any;
     getFullYear(): number;
@@ -448,7 +452,6 @@ declare class Date {
     toTimeString(): string;
     toUTCString(): string;
     valueOf(): number;
-
     static ():string;
     static now(): number;
     static parse(s: string): number;
