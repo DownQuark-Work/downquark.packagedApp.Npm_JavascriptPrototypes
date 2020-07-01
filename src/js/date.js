@@ -1,5 +1,18 @@
-  Date.prototype.getDaysOfWeek = () => ['Sun','Mon','Tues','Wed','Thu','Fri','Sat'];
-  Object.defineProperty(Date.prototype, 'HEADER',
+module.exports = () => {
+  Object.defineProperty(Date, 'daysOfWeek', {
+    get: function () { return ['Sun','Mon','Tues','Wed','Thu','Fri','Sat'] },
+    set: function (y) { throw new Error('ERROR: daysofWeek Property is READONLY') }
+  })
+  
+  const setReadOnlyError = {set: function (y) { console.error('ERROR: This Property is READONLY') }}
+  Object.defineProperty(Date.prototype, 'DEV',
+    { get: function () { this.fmt = 'YYYYMMDD'; return this }, ...setReadOnlyError })
+  Object.defineProperty(Date.prototype, 'DIRECTORY',
+    { get: function () { this.fmt = 'YYYY-MM-DD'; return this }, ...setReadOnlyError })
+  Object.defineProperty(Date.prototype, 'STANDARD',
+    { get: function () { this.fmt = 'MM / DD / YYYY'; return this }, ...setReadOnlyError })
+  Object.defineProperty(Date.prototype, 'TITLE',
+    { get: function () { this.fmt = 'MM.DD YYYY'; return this }, ...setReadOnlyError })
   Date.prototype.formatDate = function(fm)
   {
     const dat = this,
@@ -10,7 +23,7 @@
           d = amt('d') === 2 ? String('0' + (dat.getUTCDate())).slice(-2) : dat.getUTCDate()+''
     return fmt.replace(/([YMD]+)/gi, 
     (match, p1, offset, string) => p1.replace(/y+/gi, y).replace(/m+/gi, m).replace(/d+/gi, d))
-      
+    
   }
   Date.prototype.getMonthsOfYear = (returnFullName) => returnFullName
                                                                 ? ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"]
@@ -71,3 +84,4 @@
     }
     return retDates
   }
+}
