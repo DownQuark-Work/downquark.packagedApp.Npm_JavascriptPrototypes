@@ -5,6 +5,8 @@ t.type(Number.msOffset,'undefined', 'Number method DNE')
 num()
 t.isNot(Number.msOffset,'undefined', 'Number method Exists')
 
+//amtMatch
+  t.throws(function(){parseInt(12).msOffset(null)},{},'zx msOffset property must have required parameters')
 
 t.test('Number returns as offset miliseconds', t => {
   const dateTime = 1313131313131  

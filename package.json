@@ -12,10 +12,10 @@
     "postinstall": "yarn flow-typed",
     "prepublish": "yarn run build",
     "test:info": "by building first we remove the flow annotations that is needed by tap",
-    "test": "yarn run build && tap",
-    "test:coverage": "yarn run build && tap --coverage-report=lcov",
-    "test:dev:bail": "yarn run build && tap --bail --save=coverage/failures.txt",
-    "test:dev": "yarn run build && tap --bail --save=coverage/failures.txt"
+    "test": "yarn run build && tap --debug --strict",
+    "test:coverage": "yarn run build && tap --strict --coverage-report=lcov",
+    "test:dev:bail": "yarn run build && tap --strict --bail --save=coverage/failures.txt",
+    "test:dev": "yarn run build && tap --strict --bail --save=coverage/failures.txt"
   },
   "repository": {
     "type": "git",

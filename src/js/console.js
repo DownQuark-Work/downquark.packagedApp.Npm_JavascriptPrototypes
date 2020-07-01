@@ -9,6 +9,7 @@ module.exports = () => {
   console.devCount=0
   console.dev = (key, ...opts) =>
   {
+    console.log('IN_DEVELOPMENT',IN_DEVELOPMENT)
     if(IN_DEVELOPMENT._global && IN_DEVELOPMENT[key])
     {
       const printTypes = ['assert','error','info','log','table','trace','warn'],

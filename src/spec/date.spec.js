@@ -22,6 +22,7 @@ t.isNot(Date.getFullCalendarDates,'undefined', 'Date method Exists')
 
 t.test('Date retreivals', t =>{
   t.same(Date.daysOfWeek,['Sun','Mon','Tues','Wed','Thu','Fri','Sat'], 'Days of the week getter')
+  t.throws(function(){Date.daysOfWeek=[]},{},'daysOfWeek property is readonly')
   t.same(new Date().getMonthsOfYear(true), ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"], 'Abbrv Months of the year')
   t.same(new Date().getMonthsOfYear(), ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 'Months of the year')
   t.same(new Date().getNamedMonth(0,false),'Jan','get month by name working')

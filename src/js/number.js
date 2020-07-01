@@ -2,6 +2,7 @@ module.exports = () => {
   Number.prototype.msOffset = function(amt)
   { 
     const amtMatch = amt.match(/^(-?\d*)[^smhdwMy]*(s|m|h|d|w|M|y)/)
+    
     if(!amtMatch)
     { throw new Error(`invalid usage. Please ensure the argument matches this pattern /(s|m|h|d|w|M|y)/`) }
     

@@ -35,8 +35,8 @@ tap.test('dogs should be ok', async t => {
   // code doesn't throw an error, it's a pass!
 })
 
-tap.todo('make this happen', x => true)
-tap.skip('no way', z => false)
+// tap.todo('make this happen', x => true)
+// tap.skip('no way', z => false)
 // tap.fail('failed test')
 
 //subtests
