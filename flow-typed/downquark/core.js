@@ -403,7 +403,7 @@ declare class Date {
     getDay(): number;
     getDaysOfWeek(): string[];
     getEpochRange:(string,string)=>[number, number];
-    getFullCalendarDates
+    getFullCalendarDates:(Date) => any;
     getFullYear(): number;
     getHours(): number;
     getMilliseconds(): number;
