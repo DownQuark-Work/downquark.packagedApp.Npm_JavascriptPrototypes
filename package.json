@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "flow-remove-types --all src/js -d dist/",
+    "flow:info": "we have to remove core.js for prototypes to run - results in having to run flow 2x on server start to run without errors",
     "flow": "rimraf flow-typed/stubs/flow/flowlib*/core.js && flow",
     "flow:clrtmp": "rimraf flow-typed/stubs/flow/*",
     "flow:ls": "yarn flow ls",

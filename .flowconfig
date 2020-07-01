@@ -15,7 +15,7 @@
 
 [libs]
 💩 use custom core.js to declare prototype definitions
-<PROJECT_ROOT>/flow-typed/downquark/*
+💩 <PROJECT_ROOT>/flow-typed/downquark/*
 
 [lints]
 
