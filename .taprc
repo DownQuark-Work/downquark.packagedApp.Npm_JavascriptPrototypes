@@ -1,7 +1,11 @@
-coverage-map: src/spec/coveragemap.js
+branches: 85
 check-coverage: true
 comments: true
+coverage-map: src/spec/coveragemap.js
 debug: true
 flow: true
+functions: 95
+lines: 95
 output-dir: logs/coverage/raw-tests
 output-file: logs/coverage/raw-tests/compiled.tap
+statements: 95

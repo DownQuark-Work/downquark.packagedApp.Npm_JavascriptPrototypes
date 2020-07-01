@@ -12,6 +12,7 @@ module.exports = () => {
     console.log('IN_DEVELOPMENT',IN_DEVELOPMENT)
     if(IN_DEVELOPMENT._global && IN_DEVELOPMENT[key])
     {
+      if(typeof(opts[0]) !== String){ opts.unshift('') }
       const printTypes = ['assert','error','info','log','table','trace','warn'],
         printGroup = opts[0].includes('group-') ? !IN_DEVELOPMENT._groupByDefault : IN_DEVELOPMENT._groupByDefault,
         printType = printTypes.includes(opts[0].split('-').pop()) ? opts.shift().split('-').pop() : 'log',
@@ -19,6 +20,7 @@ module.exports = () => {
       
       printGroup && console.groupCollapsed(`[${key.toUpperCase()}] ${opts[0].toUpperCase()} : ${timers[console.devCount++ % timers.length]} ${new Date().getTime()}`)
       opts.forEach(itm => {
+        console.log('typeof(itm)',typeof(itm), itm.name, itm)
         if(itm === Object(itm))//spread objects & arrays
         { console[printType]({ ...itm }) }
         else if(typeof(itm) === 'function')
