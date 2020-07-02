@@ -20,7 +20,6 @@ module.exports = () => {
       
       printGroup && console.groupCollapsed(`[${key.toUpperCase()}] ${opts[0].toUpperCase()} : ${timers[console.devCount++ % timers.length]} ${new Date().getTime()}`)
       opts.forEach(itm => {
-        console.log('typeof(itm)',typeof(itm), itm.name, itm)
         if(itm === Object(itm))//spread objects & arrays
         { console[printType]({ ...itm }) }
         else if(typeof(itm) === 'function')
