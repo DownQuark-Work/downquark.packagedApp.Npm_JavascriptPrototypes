@@ -5,7 +5,7 @@ const math = require('../dist/math.js')
 const number = require('../dist/math.js')
 const string = require('../dist/string.js')
 // explicit
-const konsle = require('../dist/console.js')
+const konsole = require('../dist/console.js')
 const date = require('../dist/date.js')
 
 const Proto = () =>
@@ -14,14 +14,9 @@ const Proto = () =>
   math()
   number()
   string()
+    // can only initiate prototypes 1x
+  delete exports.$
 }
 
-module.pristine = true
-module.prototypes = {array, math, number, string, konsole, date}
-module.exports = () => { 
-    //prevents multi-init of prototypes
-  if(!module.pristine){return}
-  module.pristine = false;
-  Proto()
-  // 
-  }
+exports.$ = Proto
+exports._ = {array, math, number, string, konsole, date}
