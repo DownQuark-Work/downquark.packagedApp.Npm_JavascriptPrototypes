@@ -3,7 +3,6 @@
 [ignore]
 .*/build/.*
 .*/cache/.*
-.*/dist/.*
 .*/spec/.*
 .*/\.*/.*
 .*/flow-typed/.*
@@ -12,6 +11,7 @@
 <PROJECT_ROOT>/coverage/*
 
 [untyped]
+.*/dist/.*
 
 [libs]
 💩 use custom core.js to declare prototype definitions

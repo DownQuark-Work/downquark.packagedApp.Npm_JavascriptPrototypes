@@ -911,6 +911,8 @@ declare var module: {
     parent: any,
     children: Array<any>,
     builtinModules: Array<string>,
+    prototypes: any,
+    pristine:boolean,
     ...
 };
 declare var require: {
