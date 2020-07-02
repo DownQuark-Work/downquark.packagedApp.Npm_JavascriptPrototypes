@@ -16,6 +16,7 @@ const Proto = () =>
   string()
     // can only initiate prototypes 1x
   delete exports.$
+  return true;
 }
 
 exports.$ = Proto
