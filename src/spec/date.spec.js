@@ -1,5 +1,5 @@
 const t = require('tap'),
-      dte = require('../../dist/date.js').Defaults
+      dte = require('../../dist/date.js')
 
 t.type(Date.daysOfWeek,'undefined', 'Date method DNE')
 t.type(Date.formatDate,'undefined', 'Date method DNE')
@@ -9,7 +9,8 @@ t.type(Date.getNamedDay,'undefined', 'Date method DNE')
 t.type(Date.getEpochRange,'undefined', 'Date method DNE')
 t.type(Date.getRandomDate,'undefined', 'Date method DNE')
 t.type(Date.getFullCalendarDates,'undefined', 'Date method DNE')
-dte()
+dte.Defaults()
+dte.include.calendar()
 t.isNot(Date.daysOfWeek,'undefined', 'Date method Exists')
 t.isNot(Date.formatDate,'undefined', 'Date method Exists')
 t.isNot(Date.getMonthsOfYear,'undefined', 'Date method Exists')

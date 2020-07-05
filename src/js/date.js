@@ -103,7 +103,6 @@ const Proto = () =>
   stringFormats()
   makeReadable()
   ranged()
-  calendar()
     // can only initiate prototypes 1x
   delete exports.Defaults
   return true;

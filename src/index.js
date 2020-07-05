@@ -1,19 +1,19 @@
 // @flow // have to keep this annotation for TAP tests
 // defaults
-const array = require('../dist/array.js').Defaults
-const math = require('../dist/math.js').Defaults
-const number = require('../dist/number.js').Defaults
-const string = require('../dist/string.js').Defaults
+const array = require('../dist/array.js')
+const math = require('../dist/math.js')
+const number = require('../dist/number.js')
+const string = require('../dist/string.js')
 // explicit
-const konsole = require('../dist/console.js').Defaults
-const date = require('../dist/date.js').Defaults
+const konsole = require('../dist/console.js')
+const date = require('../dist/date.js')
 
 const Proto = () =>
 { // defaults
-  array()
-  math()
-  number()
-  string()
+  array.Defaults()
+  math.Defaults()
+  number.Defaults()
+  string.Defaults()
     // can only initiate prototypes 1x
   delete exports.Defaults
   return true;

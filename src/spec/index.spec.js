@@ -1,5 +1,6 @@
 const t = require('tap'),
       Prototypes = require('../index.js')
+      // arr = require('../../dist/array.js')
 
 // remove prototypes for base testing
 if(String.prototype.endsWith){delete String.prototype.endsWith}
@@ -18,8 +19,6 @@ t.test('Prototypes DNE when initted', t => {
 t.test('Imported prototype functions specified', t => {
   t.type(Prototypes.Defaults,'function', 'Default prototype function exists')
   t.type(Prototypes.include,'object', 'Default prototype function exists')
-    for(let k in Prototypes.include)
-    { t.type(Prototypes.include[k],'function', 'Included index on object is function') }
   t.end()
 })
 
@@ -37,7 +36,7 @@ t.test('Can import default prototypes', t => {
 
 t.test('Can import specific prototypes', t => {
   const {konsole, date} = Prototypes.include
-  konsole(); date()
+  konsole.include.consoleDev(); date.Defaults()
 
   t.isNot(console.devCount,'undefined', 'Console method DNE')
   t.isNot(Date.daysOfWeek,'undefined', 'Date method DNE')
@@ -45,26 +44,11 @@ t.test('Can import specific prototypes', t => {
   t.end()
 })
 
-// reset array prototype
-delete Array.prototype.last
-delete Array.prototype.len
-delete Array.prototype.shuffle
-delete Array.prototype.unique
-
-t.test('Reset Array Prototypes', t=> {
-  t.type(Array.prototype.last,'undefined', 'Array last prototype DNE')
-  t.type(Array.prototype.len,'undefined', 'Array len prototype DNE')
-  t.type(Array.prototype.shuffle,'undefined', 'Array shuffle prototype DNE')
-  t.type(Array.prototype.unique,'undefined', 'Array unique prototype DNE')
-  t.end()
-})
 t.test('Include Nested Single protocol', t => {
-  {last, len} = Prototypes.include['array'].include
-  last(); len()
-  t.isNot(Array.prototype.last,'undefined', 'Array last prototype DNE')
-  t.isNot(Array.prototype.len,'undefined', 'Array len prototype DNE')
-  t.type(Array.prototype.shuffle,'undefined', 'Array shuffle prototype DNE')
-  t.type(Array.prototype.unique,'undefined', 'Array unique prototype DNE')
+  t.type(Date.getFullCalendarDates,'undefined', 'Non default, nested Date Calendar method DNE')
+  Prototypes.include.date.include.calendar()
+  t.isNot(Date.getFullCalendarDates,'undefined', 'Non default, nested Date Calendar method Exists')
+  t.end()
 })
 
 // console.log('Prototypes',Prototypes.include, Prototypes.Defaults, typeof(Prototypes.Defaults))

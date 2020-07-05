@@ -9,5 +9,6 @@ Currently, you can choose defaults, individuals, or add non-defaults
 - `import proto from '@downquark/utils-js-prototypes' //all defaults`
 - `import proto, {nonDefaults} from '@downquark/utils-js-prototypes' // all defaults and non-defaults`
 - `import proto, {dateCalendar} from '@downquark/utils-js-prototypes' // all defaults and specified non-default only`
+- Prototypes.include.date.include.calendar()
 - `import {arrayLen,reverseStr,dateCalendar} from '@downquark/utils-js-prototypes' //specified prototypes only`
 - `import {dateCalendar} from '@downquark/utils-js-prototypes' //specified prototypes only (no defaults would be imported)`
