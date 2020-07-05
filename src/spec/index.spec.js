@@ -1,6 +1,5 @@
 const t = require('tap'),
       Prototypes = require('../index.js')
-      // arr = require('../../dist/array.js')
 
 // remove prototypes for base testing
 if(String.prototype.endsWith){delete String.prototype.endsWith}
@@ -50,10 +49,3 @@ t.test('Include Nested Single protocol', t => {
   t.isNot(Date.getFullCalendarDates,'undefined', 'Non default, nested Date Calendar method Exists')
   t.end()
 })
-
-// console.log('Prototypes',Prototypes.include, Prototypes.Defaults, typeof(Prototypes.Defaults))
-// console.log('Prototypes.Defaults()',Prototypes.Defaults())
-// console.log('Prototypes.include',Prototypes.include)
-// const {array, string} = Prototypes.include
-// console.log('array, string',array, string)
-// array(), array()
