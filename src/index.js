@@ -15,9 +15,9 @@ const Proto = () =>
   number()
   string()
     // can only initiate prototypes 1x
-  delete exports.$
+  delete exports.Defaults
   return true;
 }
 
-exports.$ = Proto
-exports._ = {array, math, number, string, konsole, date}
+exports.Defaults = Proto
+exports.include = {array, math, number, string, konsole, date}

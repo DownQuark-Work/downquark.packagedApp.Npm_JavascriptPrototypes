@@ -10,11 +10,11 @@ module.exports = () => {
   console.dev = (key, ...opts) =>
   {
     console.log('IN_DEVELOPMENT',IN_DEVELOPMENT)
-    if(IN_DEVELOPMENT._global && IN_DEVELOPMENT[key])
+    if(IN_DEVELOPMENT.includeglobal && IN_DEVELOPMENT[key])
     {
       if(typeof(opts[0]) !== String){ opts.unshift('') }
       const printTypes = ['assert','error','info','log','table','trace','warn'],
-        printGroup = opts[0].includes('group-') ? !IN_DEVELOPMENT._groupByDefault : IN_DEVELOPMENT._groupByDefault,
+        printGroup = opts[0].includes('group-') ? !IN_DEVELOPMENT.includegroupByDefault : IN_DEVELOPMENT.includegroupByDefault,
         printType = printTypes.includes(opts[0].split('-').pop()) ? opts.shift().split('-').pop() : 'log',
         timers = ['🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚', '🕛', '🕜', '🕝', '🕞', '🕟', '🕠', '🕡', '🕢', '🕣', '🕤', '🕥', '🕦', '🕧']
       
