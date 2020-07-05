@@ -1,7 +1,7 @@
 const t = require('tap')
 const arr = require('../../dist/array.js').Defaults
 
-// shuffle dne
+// prototypes dne
 t.type(Array.prototype.last,'undefined', 'Array last prototype DNE')
 t.type(Array.prototype.len,'undefined', 'Array len prototype DNE')
 t.type(Array.prototype.shuffle,'undefined', 'Array shuffle prototype DNE')

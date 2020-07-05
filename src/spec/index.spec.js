@@ -45,6 +45,28 @@ t.test('Can import specific prototypes', t => {
   t.end()
 })
 
+// reset array prototype
+delete Array.prototype.last
+delete Array.prototype.len
+delete Array.prototype.shuffle
+delete Array.prototype.unique
+
+t.test('Reset Array Prototypes', t=> {
+  t.type(Array.prototype.last,'undefined', 'Array last prototype DNE')
+  t.type(Array.prototype.len,'undefined', 'Array len prototype DNE')
+  t.type(Array.prototype.shuffle,'undefined', 'Array shuffle prototype DNE')
+  t.type(Array.prototype.unique,'undefined', 'Array unique prototype DNE')
+  t.end()
+})
+t.test('Include Nested Single protocol', t => {
+  {last, len} = Prototypes.include['array'].include
+  last(); len()
+  t.isNot(Array.prototype.last,'undefined', 'Array last prototype DNE')
+  t.isNot(Array.prototype.len,'undefined', 'Array len prototype DNE')
+  t.type(Array.prototype.shuffle,'undefined', 'Array shuffle prototype DNE')
+  t.type(Array.prototype.unique,'undefined', 'Array unique prototype DNE')
+})
+
 // console.log('Prototypes',Prototypes.include, Prototypes.Defaults, typeof(Prototypes.Defaults))
 // console.log('Prototypes.Defaults()',Prototypes.Defaults())
 // console.log('Prototypes.include',Prototypes.include)
