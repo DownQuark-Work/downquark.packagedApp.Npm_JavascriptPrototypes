@@ -1,5 +1,5 @@
 const t = require('tap'),
-      dte = require('../../dist/date.js')
+      dte = require('../../dist/date.js').Defaults
 
 t.type(Date.daysOfWeek,'undefined', 'Date method DNE')
 t.type(Date.formatDate,'undefined', 'Date method DNE')

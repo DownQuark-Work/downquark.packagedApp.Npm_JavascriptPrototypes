@@ -1,4 +1,4 @@
-module.exports = () => {
+const msOffset = () => {
   Number.prototype.msOffset = function(amt)
   { 
     const amtMatch = amt.match(/^(-?\d*)[^smhdwMy]*(s|m|h|d|w|M|y)/)
@@ -16,3 +16,14 @@ module.exports = () => {
     return  this + parseInt(d,10) * multObj[s] * multAmt
   }
 }
+
+const Proto = () =>
+{ // defaults
+  msOffset()
+    // can only initiate prototypes 1x
+  delete exports.Defaults
+  return true;
+}
+
+exports.Defaults = Proto
+exports.include = {msOffset}

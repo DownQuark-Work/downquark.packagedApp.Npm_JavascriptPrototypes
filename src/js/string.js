@@ -1,4 +1,4 @@
-module.exports = () => {
+const endsWith = () => {
   if (!String.prototype.endsWith) {
     String.prototype.endsWith = function(search, this_len) {
       if (this_len === undefined || this_len > this.length) {
@@ -7,7 +7,9 @@ module.exports = () => {
       return this.substring(this_len - search.length, this_len) === search;
     };
   }
+}
 
+const padStart = () => {
   if (!String.prototype.padStart) {
     String.prototype.padStart = function padStart(targetLength, padString) {
         targetLength = targetLength >> 0; //truncate if number, or convert non-number to 0;
@@ -24,3 +26,15 @@ module.exports = () => {
     };
   }
 }
+
+const Proto = () =>
+{ // defaults
+  endsWith()
+  padStart()
+    // can only initiate prototypes 1x
+  delete exports.Defaults
+  return true;
+}
+
+exports.Defaults = Proto
+exports.include = {endsWith,padStart}

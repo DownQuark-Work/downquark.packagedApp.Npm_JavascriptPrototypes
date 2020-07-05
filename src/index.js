@@ -1,12 +1,12 @@
 // @flow // have to keep this annotation for TAP tests
 // defaults
-const array = require('../dist/array.js')
-const math = require('../dist/math.js')
-const number = require('../dist/math.js')
-const string = require('../dist/string.js')
+const array = require('../dist/array.js').Defaults
+const math = require('../dist/math.js').Defaults
+const number = require('../dist/number.js').Defaults
+const string = require('../dist/string.js').Defaults
 // explicit
-const konsole = require('../dist/console.js')
-const date = require('../dist/date.js')
+const konsole = require('../dist/console.js').Defaults
+const date = require('../dist/date.js').Defaults
 
 const Proto = () =>
 { // defaults

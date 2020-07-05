@@ -1,9 +1,5 @@
-module.exports = () => {
-  Object.defineProperty(Date, 'daysOfWeek', {
-    get: function () { return ['Sun','Mon','Tues','Wed','Thu','Fri','Sat'] },
-    set: function (y) { throw new Error('ERROR: daysofWeek Property is READONLY') }
-  })
-  
+const stringFormats = () =>
+{
   const setReadOnlyError = {set: function (y) { console.error('ERROR: This Property is READONLY') }}
   Object.defineProperty(Date.prototype, 'DEV',
     { get: function () { this.fmt = 'YYYYMMDD'; return this }, ...setReadOnlyError })
@@ -25,6 +21,14 @@ module.exports = () => {
     (match, p1, offset, string) => p1.replace(/y+/gi, y).replace(/m+/gi, m).replace(/d+/gi, d))
     
   }
+}
+
+const makeReadable = () =>
+{
+  Object.defineProperty(Date, 'daysOfWeek', {
+    get: function () { return ['Sun','Mon','Tues','Wed','Thu','Fri','Sat'] },
+    set: function (y) { throw new Error('ERROR: daysofWeek Property is READONLY') }
+  })
   Date.prototype.getMonthsOfYear = (returnFullName) => returnFullName
                                                                 ? ["January", "February", "March", "April", "May","June","July", "August", "September", "October", "November","December"]
                                                                 : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -34,6 +38,10 @@ module.exports = () => {
   Date.prototype.getNamedDay = (indx, returnFullName) => returnFullName
                                                                 ? ['Sunday','Monday','Tuesday','Wedday','Thuday','Friday','Saturday'][indx]
                                                                 : ['Sun','Mon','Tues','Wed','Thu','Fri','Sat'][indx]
+}
+
+const ranged = () =>
+{
   Date.prototype.getEpochRange = (startDate, endDate) => [new Date(startDate).getTime(), new Date(endDate).getTime()]
   Date.prototype.getRandomDate = (past,future) =>
   { //defaults to a 30 day range with `new Date()` as mid-point
@@ -46,6 +54,10 @@ module.exports = () => {
           timestamp = Math.random()*rangeEnd-rangeStart
     return new Date(timestamp)
   }
+}
+
+const calendar = () =>
+{
   Date.prototype.getFullCalendarDates = (dt) =>
   {
     const first = new Date(dt.getFullYear(), dt.getMonth(), 1),
@@ -85,3 +97,17 @@ module.exports = () => {
     return retDates
   }
 }
+
+const Proto = () =>
+{ // defaults
+  stringFormats()
+  makeReadable()
+  ranged()
+  calendar()
+    // can only initiate prototypes 1x
+  delete exports.Defaults
+  return true;
+}
+
+exports.Defaults = Proto
+exports.include = {stringFormats, makeReadable, ranged, calendar}

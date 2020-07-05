@@ -1,5 +1,5 @@
 const t = require('tap'),
-      con = require('../../dist/console.js')
+      con = require('../../dist/console.js').Defaults
 
 // headless specs, all I can think of right now
 t.type(console.devCount,'undefined', 'Console method DNE')

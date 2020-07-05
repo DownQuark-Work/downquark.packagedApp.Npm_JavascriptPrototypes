@@ -1,5 +1,5 @@
 const t = require('tap'),
-      mth = require('../../dist/math.js')
+      mth = require('../../dist/math.js').Defaults
 
 t.type(Math.msInDay,'undefined', 'Math method DNE')
 mth()

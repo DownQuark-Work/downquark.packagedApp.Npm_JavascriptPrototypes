@@ -1,5 +1,5 @@
 const t = require('tap'),
-      num = require('../../dist/number.js')
+      num = require('../../dist/number.js').Defaults
 
 t.type(Number.msOffset,'undefined', 'Number method DNE')
 num()

@@ -41,7 +41,7 @@ t.test('Can import specific prototypes', t => {
 
   t.isNot(console.devCount,'undefined', 'Console method DNE')
   t.isNot(Date.daysOfWeek,'undefined', 'Date method DNE')
-  
+
   t.end()
 })
 
