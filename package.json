@@ -1,6 +1,6 @@
 {
   "name": "@downquark/utils-js-prototypes",
-  "version": "0.1.0",
+  "version": "0.2.0-0",
   "description": "DownQuark's commonly used set of javascript functions",
   "main": "src/index.js",
   "browserslist": [
