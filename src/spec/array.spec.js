@@ -35,7 +35,7 @@ t.test('Array Len Prototype', t => {
   t.end()
 })
 
-t.same(arrBase[arrBase.len], arrBase.last, 'len and last function as desired')
+t.same(arrBase[arrBase.len], arrBase.last, 'len and last return correct count and data')
 
 t.test('Array Shuffle Prototype', t => {
   t.type(Array.prototype.shuffle,'function', 'Array shuffle prototype Exists')

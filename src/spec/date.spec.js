@@ -27,7 +27,7 @@ t.test('Date retreivals', t =>{
   t.same(new Date().getMonthsOfYear(), ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 'Months of the year')
   t.same(new Date().getNamedMonth(0,false),'Jan','get Abbrv month by name working')
   t.same(new Date().getNamedMonth(3,true),'April','get Fulllmonth by name working')
-  t.same(new Date().getNamedDay(3,false),'Wed','get Abbrv day by name working')
+  t.same(new Date().getNamedDay(3),'Wed','get Abbrv day by name working')
   t.same(new Date().getNamedDay(1,true),'Monday','get Full day by name working')
 
   t.end()

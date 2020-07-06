@@ -9,11 +9,11 @@ Here are some important resources:
   * Mailing list: Join our [developer list](#)
   * [Bugs](#)? Report them here
 
-### Testing
-We use [cypress.io](https://docs.cypress.io) and its [Libraries and Tools]([cypress.io](https://docs.cypress.io/guides/guides/stubs-spies-and-clocks.html#Libraries-and-Tools)) for unit and e2e testing.
+### [Testing](#Testing)
+We are using [node tap](https://node-tap.org) for unit and integration testing.
 
-Please use cypress when writing tests.
-Decide [what type of test](https://docs.cypress.io/faq/questions/general-questions-faq.html#When-should-I-write-a-unit-test-and-when-should-I-write-an-end-to-end-test) you should write?
+Please continue using node tap when writing tests.
+When validating your pull request please ensure that `$ yarn build && yarn tap --strict --100` (or the npm equivalent) passes. We will strive to ensure 100% code completion within this library
 
 
 ### Reporting Bugs

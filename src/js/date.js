@@ -1,6 +1,5 @@
 const stringFormats = () =>
 {
-  // const setReadOnlyError = {set: function (y) { console.error('ERROR: This Property is READONLY') }}
   function setReadOnlyError(y) { console.error('ERROR: This Property is READONLY') }
   Object.defineProperty(Date.prototype, 'DEV',
     { get: function () { this.fmt = 'YYYYMMDD'; return this }, set: setReadOnlyError() })
