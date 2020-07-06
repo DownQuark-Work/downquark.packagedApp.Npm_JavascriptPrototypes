@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "flow-remove-types --all src/js -d dist/",
-    "build:parcel": "parcel build src/index.js --target module && cp package.json publish/module/package.json",
+    "build:parcel": "parcel build src/index.js --target module && cp package.json README.md publish/module/",
     "flow:info": "we have to remove core.js for prototypes to run - results in having to run flow 2x on server start to run without errors",
     "flow": "rimraf flow-typed/stubs/flow/flowlib*/core.js && flow",
     "flow:clrtmp": "rimraf flow-typed/stubs/flow/*",

@@ -17,6 +17,10 @@
   - [Table of contents](#table-of-contents)
   - [Common usage](#common-usage)
   - [Installation](#installation)
+  - [Local Build Process](#local-build-process)
+    - [Setup](#setup)
+    - [Build](#build)
+    - [Iterate](#iterate)
   - [Current Modules & Methods](#current-modules--methods)
 ## Common usage
 Using CommonJS for these to help differentiate between AMD/RequireJS modules commonly reused in projects. Any prototypes being used should be imported and instantiated a single time.
@@ -44,6 +48,50 @@ This way of handling prototypes allows for easy scalability. We can create as ma
 
 We will continue to update this library with helpful snippets - while ensuring that we keep _**100**_% [code coverage](./CONTRIBUTING.md#Testing)
 Next steps will be to port over relevant snippets from [30 seconds of code](https://www.30secondsofcode.org/js/p/1).
+
+## Local Build Process
+### Setup
+- Fork the repository
+- Install dependencies
+  - `$ yarn`
+- Functional Code changes should _only_ be made in the `src` directory
+- There should be a 1:1 mapping between files and primitives being extended
+  - Create a new file if needed
+  - Update an existing file if not
+- Create the prototype which will be called as a non-default method within: `src/js/<PRIMITIVE>.js`
+- Create the tests within: `src/spec/<PRIMITIVE>.js`
+- If you created a _NEW_ primitive file
+  - `require` and `include` the file as a non-default object within: `src/index.js`
+- For `flow`'s typing to allow protoype updates the new methods / vars / etc will need to be updated at: `flow-typed/downquark/core.js`
+  - If declarations have no direct impact on the prototype please create/re-use a file that follows the same mapping created for the `spec` files above, only in the `flow-typed/downquark`  directory
+
+---
+### Build
+- `$ yarn flow`
+  - The first time the server starts up this _**WILL ERROR**_
+    - TODO: Make this error go away
+  - Re-run `$ yarn flow`  up to 2 more times and the cache should be cleared and the correct `core.js` file will be referenced
+    - Duplicated files without flow typings will be created in the `dist` directory
+- `$ yarn test`
+  - The tests will reference the `dist` directory files
+    - you will need to re-run flow with each update made to see the effect
+  - Continue testing until there is **100%** coverage
+    - Any PR that fails to comply with [The TAP 100](https://node-tap.org/docs/coverage/100/) will not be able to be accepted
+- Add the new prototypical method to the [Current Modules & Methods](#current-modules--methods) list
+- Create a PR with a quick description explaining:
+  - The new method's purpose
+  - An example piece of code showing how to use it
+  - Any other information you wish to pass along
+
+---
+### Iterate
+- To view your work locally
+  - Complete the [Build](#build) process to the point where `$ yarn flow` populates the `dist` directory
+  - `$ yarn build:parcel`
+  - `$ cd publish/module && npm link && cd - && y serve`
+    - If a browser does not automatically open, navigate to [http://0.0.0.0:1313](http://0.0.0.0:1313)
+      - The `utils-js-prototypes` package is loaded and initialized as it will be for the end user
+      - Verify working code using your normal processes
 
 ## Current Modules & Methods
 
