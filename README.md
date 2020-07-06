@@ -4,8 +4,8 @@
 
 |||
 |:-:|:-:|
-![GitHub](https://img.shields.io/github/license/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes)|![codecov](https://codecov.io/gh/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes/branch/master/graph/badge.svg)|
-![npm (scoped)](https://img.shields.io/npm/v/@downquark/utils-js-prototypes)|![GitHub package.json version](https://img.shields.io/github/package-json/v/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes)|
+![GitHub](https://img.shields.io/github/license/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets)|![codecov](https://codecov.io/gh/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets/branch/master/graph/badge.svg)|
+![npm (scoped)](https://img.shields.io/npm/v/@downquark/utils-js-prototypes)|![GitHub package.json version](https://img.shields.io/github/package-json/v/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets)|
 </p>
 
 ---
