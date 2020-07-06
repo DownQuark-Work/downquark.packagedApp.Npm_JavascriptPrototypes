@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "flow-remove-types --all src/js -d dist/",
-    "build:parcel": "parcel build src/index.js --target module && cp package.json README.md publish/module/",
+    "build:parcel": "rimraf publish/module/* && parcel build src/index.js --target module && cp package.json README.md publish/module/ && yarn sedit",
     "dev": "parcel publish/sandbox/index.html --target sandbox --open --port 1313",
     "flow:info": "we have to remove core.js for prototypes to run - results in having to run flow 2x on server start to run without errors",
     "flow": "rimraf flow-typed/stubs/flow/flowlib*/core.js && flow",
@@ -29,8 +29,7 @@
     "xflow-typed": "rimraf flow-typed/npm && flow-typed install",
     "xpostinstall": "yarn flow-typed",
     "xprepublish": "yarn run build",
-    "zsedit": "sed 's|[a-zA-Z]* |DELETED |g'  <./package.json >./publish/module/package.json",
-    "sedit": "sed ' s|\\.js\",|.js\"}|g ; /main/q' <./package.json >./publish/module/packageX.json",
+    "sedit": "sed ' s|\\.js\",|.js\"}|g ; /main/q' <./package.json >./publish/module/package.json",
     "test:info": "by building first we remove the flow annotations that is needed by tap",
     "test": "yarn run build && tap --debug --strict --100",
     "posttest": "tap --coverage-report=text-lcov | codecov -t 'b44a721c-721b-4aba-9599-fd2fcd9dd534'",
