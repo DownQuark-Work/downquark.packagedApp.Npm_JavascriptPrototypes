@@ -1,5 +1,13 @@
 # downquark.work Javascript Prototypes
 
+<p align="center">
+
+![GitHub](https://img.shields.io/github/license/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes)
+|
+[![codecov](https://codecov.io/gh/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes/branch/master/graph/badge.svg)](https://codecov.io/gh/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes)
+</p>
+
+---
 > Creating a commonly used set of functions that also signals the official start of DownQuark’s commitment to Open Source.
 
 ## Table of contents
@@ -17,6 +25,7 @@ Currently, you can choose defaults, individuals, or add non-defaults
 ## Installation
 To import and init the defaults only:
 - `const Prototypes = require('@downquark/utils-js-prototypes').Defaults()`
+- 
 To select and initialize non-default methods:
 ```
 const {konsole, date} = require('@downquark/utils-js-prototypes').include
