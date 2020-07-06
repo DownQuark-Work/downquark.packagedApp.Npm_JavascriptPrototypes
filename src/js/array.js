@@ -47,7 +47,7 @@ const Proto = () =>
   shuffle()
   unique()
     // can only initiate prototypes 1x
-  delete exports.Defaults
+  exports && delete exports.Defaults
   return true;
 }
 

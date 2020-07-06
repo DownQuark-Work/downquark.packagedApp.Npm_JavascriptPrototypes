@@ -10,12 +10,13 @@ const date = require('../dist/date.js')
 
 const Proto = () =>
 { // defaults
+console.log('typeof(array)',typeof(array))
   array.Defaults()
   math.Defaults()
   number.Defaults()
   string.Defaults()
     // can only initiate prototypes 1x
-  delete exports.Defaults
+  exports && delete exports.Defaults
   return true;
 }
 

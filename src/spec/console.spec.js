@@ -17,6 +17,7 @@ const fnc = () => true
     // t.test('GO',t=>(console.dev('base',{},{},'bobbyz')).then(x=>console.log('xxxxx',x)))
     
     // console.log('process',process.stdin.on)
+    // console.log('t.stdout',t.stdout)
   // console.log('stdin',stdin)
   // t.stdout.on('data', function(data){
   //                     console.log('TTTT',data.toString());
@@ -24,6 +25,7 @@ const fnc = () => true
   // process.stdout.on('data', function(data){
   //                     console.log('xxx',data.toString());
   //             });
+  // t.same(console.dev('base','group-info',{'dq':13},fnc),true,'base console works')
   t.doesNotThrow(function branchTest2(){console.dev('base','group-info',{'dq':13},fnc)},'successfully logs to console')
   t.doesNotThrow(function branchTest3(){console.dev('base','hello')},{},'successfully logs to console')
   t.doesNotThrow(function branchTest4(){console.dev('base',fnc)},{},'successfully logs to console')

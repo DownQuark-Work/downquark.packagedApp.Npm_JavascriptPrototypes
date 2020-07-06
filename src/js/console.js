@@ -5,6 +5,7 @@
         _groupByDefault:true,
         base:true,
         contactPage:false,
+        includeglobal:true,
       }
     console.devCount=0
     console.dev = (key, ...opts) =>
@@ -14,7 +15,7 @@
       {
         if(typeof(opts[0]) !== String){ opts.unshift('') }
         const printTypes = ['assert','error','info','log','table','trace','warn'],
-          printGroup = opts[0].includes('group-') ? !IN_DEVELOPMENT.includegroupByDefault : IN_DEVELOPMENT.includegroupByDefault,
+          printGroup = opts[0].includes('group-') ? !IN_DEVELOPMENT._groupByDefault : IN_DEVELOPMENT._groupByDefault,
           printType = printTypes.includes(opts[0].split('-').pop()) ? opts.shift().split('-').pop() : 'log',
           timers = ['🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚', '🕛', '🕜', '🕝', '🕞', '🕟', '🕠', '🕡', '🕢', '🕣', '🕤', '🕥', '🕦', '🕧']
         
@@ -39,7 +40,7 @@ const Proto = () =>
 { // defaults
   consoleDev()
     // can only initiate prototypes 1x
-  delete exports.Defaults
+  exports && delete exports.Defaults
   return true;
 }
 

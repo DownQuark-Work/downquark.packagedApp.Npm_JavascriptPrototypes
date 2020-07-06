@@ -904,6 +904,8 @@ declare var global: any;
 
 declare var module: {
     exports: any,
+    Defaults: () => any,
+    includes: {[key:string]:any},
     require(id: string): any,
     id: string,
     filename: string,

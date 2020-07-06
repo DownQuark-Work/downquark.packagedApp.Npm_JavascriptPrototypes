@@ -33,6 +33,7 @@ module.file_ext=.jsx
 💩module.file_ext=.css
 💩module.file_ext=.scss
 💩module.name_mapper='.*\(.s?css\)' -> 'empty/object'
+module.name_mapper='*.core.js' -> '<PROJECT_ROOT>/flow-typed/downquark/core.js'
 💩 Below is for use with webpack
 💩module.name_mapper='.*\(png|svg|jpe?g|gif|ico\)$' -> '<PROJECT_ROOT>/flow-typed/stubs/npm/file-loader_vx.x.x.js'
 ; suppress_comment=.*\$FlowTest
