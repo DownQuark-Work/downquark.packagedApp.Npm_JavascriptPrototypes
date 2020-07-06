@@ -5,7 +5,7 @@
 |||
 |:-:|:-:|
 ![GitHub](https://img.shields.io/github/license/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets)|![codecov](https://codecov.io/gh/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets/branch/master/graph/badge.svg)|
-![npm (scoped)](https://img.shields.io/npm/v/@downquark/utils-js-prototypes)|![GitHub package.json version](https://img.shields.io/github/package-json/v/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets)|
+![npm (scoped)](https://img.shields.io/npm/v/@downquark/proto-snips)|![GitHub package.json version](https://img.shields.io/github/package-json/v/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets)|
 </p>
 
 ---
@@ -29,22 +29,22 @@ Currently, you can choose defaults, individuals, or add non-defaults
 
 ## Installation
 To import and init the defaults only:
-- `const Prototypes = require('@downquark/utils-js-prototypes').Defaults()`
+- `const Prototypes = require('@downquark/proto-snips').Defaults()`
 - 
 To select and initialize non-default methods:
 ```
-const {konsole, date} = require('@downquark/utils-js-prototypes').include
+const {konsole, date} = require('@downquark/proto-snips').include
 date.Defaults() // <-- to include the modules defaults
 konsole.include.consoleDev() // <-- specific OR non-default methods
 ```
 Single line import and init examples for or non-default methods from 
 ```
-const _ = require('@downquark/utils-js-prototypes').include.date.include.calendar()
-const _2 = require('@downquark/utils-js-prototypes').include.date.Defaults()
+const _ = require('@downquark/proto-snips').include.date.include.calendar()
+const _2 = require('@downquark/proto-snips').include.date.Defaults()
 ```
 
 This way of handling prototypes allows for easy scalability. We can create as many methods as we like without concern of package size or code bloat because we only import what is needed per project. e.g.:
-` const multi-level-nested-prototype = require('@downquark/utils-js-prototypes').include.date.include.calendar.include.moonCycles.include.waning()`
+` const multi-level-nested-prototype = require('@downquark/proto-snips').include.date.include.calendar.include.moonCycles.include.waning()`
 
 We will continue to update this library with helpful snippets - while ensuring that we keep _**100**_% [code coverage](./CONTRIBUTING.md#Testing)
 Next steps will be to port over relevant snippets from [30 seconds of code](https://www.30secondsofcode.org/js/p/1).
@@ -90,7 +90,7 @@ Next steps will be to port over relevant snippets from [30 seconds of code](http
   - `$ yarn build:parcel`
   - `$ cd publish/module && npm link && cd - && yarn dev`
     - If a browser does not automatically open, navigate to [http://0.0.0.0:1313](http://0.0.0.0:1313)
-      - The `utils-js-prototypes` package is loaded and initialized as it will be for the end user
+      - The `proto-snips` package is loaded and initialized as it will be for the end user
       - Verify working code using your normal processes
 
 ## Current Modules & Methods
