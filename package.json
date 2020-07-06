@@ -2,6 +2,17 @@
   "name": "@downquark/utils-js-prototypes",
   "version": "0.1.1-0",
   "description": "DownQuark's commonly used set of javascript functions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes.git"
+  },
+  "keywords": [],
+  "author": "mlnck",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes/issues"
+  },
+  "homepage": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes#readme",
   "main": "src/index.js",
   "browserslist": [
     "> 1%",
@@ -10,6 +21,7 @@
   "scripts": {
     "build": "flow-remove-types --all src/js -d dist/",
     "build:parcel": "parcel build src/index.js --target module && cp package.json README.md publish/module/",
+    "dev": "parcel publish/sandbox/index.html --target sandbox --open --port 1313",
     "flow:info": "we have to remove core.js for prototypes to run - results in having to run flow 2x on server start to run without errors",
     "flow": "rimraf flow-typed/stubs/flow/flowlib*/core.js && flow",
     "flow:clrtmp": "rimraf flow-typed/stubs/flow/*",
@@ -17,6 +29,8 @@
     "xflow-typed": "rimraf flow-typed/npm && flow-typed install",
     "xpostinstall": "yarn flow-typed",
     "xprepublish": "yarn run build",
+    "zsedit": "sed 's|[a-zA-Z]* |DELETED |g'  <./package.json >./publish/module/packageX.json",
+    "sedit": "sed ' s|\\.js\",|.js\"}|g ; /main/q' <./package.json >./publish/module/packageX.json",
     "test:info": "by building first we remove the flow annotations that is needed by tap",
     "test": "yarn run build && tap --debug --strict --100",
     "posttest": "tap --coverage-report=text-lcov | codecov -t 'b44a721c-721b-4aba-9599-fd2fcd9dd534'",
@@ -24,18 +38,8 @@
     "test:dev:bail": "yarn run build && tap --strict --bail --save=coverage/failures.txt",
     "test:dev": "yarn run build && tap --strict --bail --save=coverage/failures.txt"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "GPL-3.0-only",
-  "bugs": {
-    "url": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes/issues"
-  },
-  "homepage": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes#readme",
   "module": "publish/module/index.js",
+  "sandbox": "publish/sandbox/index.html",
   "targets": {
     "module": {
       "engines": {
@@ -43,6 +47,10 @@
       },
       "outputFormat": "commonjs",
       "sourceMap": false
+    },
+    "sandbox": {
+      "engines": { "browsers": ["> 1%","not dead"] },
+      "isLibrary": true
     }
   },
   "devDependencies": {

@@ -26,7 +26,7 @@ _notes/.ignored/
 # parcel outputs (https://parceljs.org/)
 *parcel-cache
 .cache
-publish/
+publish/module
 
 # tap testing
 coverage/

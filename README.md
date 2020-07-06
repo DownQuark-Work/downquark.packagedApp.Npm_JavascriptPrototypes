@@ -88,7 +88,7 @@ Next steps will be to port over relevant snippets from [30 seconds of code](http
 - To view your work locally
   - Complete the [Build](#build) process to the point where `$ yarn flow` populates the `dist` directory
   - `$ yarn build:parcel`
-  - `$ cd publish/module && npm link && cd - && y serve`
+  - `$ cd publish/module && npm link && cd - && yarn dev`
     - If a browser does not automatically open, navigate to [http://0.0.0.0:1313](http://0.0.0.0:1313)
       - The `utils-js-prototypes` package is loaded and initialized as it will be for the end user
       - Verify working code using your normal processes
