@@ -23,8 +23,10 @@ _notes/.ignored/
 # Yarn Integrity file
 .yarn-integrity
 
-# parcel-bundler cache (https://parceljs.org/)
+# parcel outputs (https://parceljs.org/)
+*parcel-cache
 .cache
+publish/
 
 # tap testing
 coverage/

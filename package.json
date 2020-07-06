@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "description": "DownQuark's commonly used set of javascript functions",
   "main": "src/index.js",
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ],
   "scripts": {
     "build": "flow-remove-types --all src/js -d dist/",
+    "build:parcel": "parcel build src/index.js --target module && cp package.json publish/module/package.json",
     "flow:info": "we have to remove core.js for prototypes to run - results in having to run flow 2x on server start to run without errors",
     "flow": "rimraf flow-typed/stubs/flow/flowlib*/core.js && flow",
     "flow:clrtmp": "rimraf flow-typed/stubs/flow/*",
     "flow:ls": "yarn flow ls",
     "xflow-typed": "rimraf flow-typed/npm && flow-typed install",
     "xpostinstall": "yarn flow-typed",
-    "prepublish": "yarn run build",
+    "xprepublish": "yarn run build",
     "test:info": "by building first we remove the flow annotations that is needed by tap",
     "test": "yarn run build && tap --debug --strict --100",
     "posttest": "tap --coverage-report=text-lcov | codecov -t 'b44a721c-721b-4aba-9599-fd2fcd9dd534'",
@@ -30,11 +35,22 @@
     "url": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes/issues"
   },
   "homepage": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_JavascriptPrototypes#readme",
+  "module": "publish/module/index.js",
+  "targets": {
+    "module": {
+      "engines": {
+        "node": ">=8.x"
+      },
+      "outputFormat": "commonjs",
+      "sourceMap": false
+    }
+  },
   "devDependencies": {
     "codecov": "^3.7.0",
     "flow": "^0.2.3",
     "flow-bin": "^0.128.0",
     "flow-remove-types": "^2.128.0",
+    "parcel": "^2.0.0-beta.1",
     "rimraf": "^3.0.2",
     "tap": "^14.10.7"
   }

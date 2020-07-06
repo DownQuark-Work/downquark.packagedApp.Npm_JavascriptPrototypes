@@ -1,14 +1,15 @@
 [include]
 
 [ignore]
+.*/\.*/.*
 .*/build/.*
 .*/cache/.*
-.*/spec/.*
-.*/\.*/.*
 .*/flow-typed/.*
+.*/spec/.*
 <PROJECT_ROOT>/\.\w*
-<PROJECT_ROOT>/node_modules/*
 <PROJECT_ROOT>/coverage/*
+<PROJECT_ROOT>/node_modules/*
+<PROJECT_ROOT>/publish/*
 
 [untyped]
 .*/dist/.*
