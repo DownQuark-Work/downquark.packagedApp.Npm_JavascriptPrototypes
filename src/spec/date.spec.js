@@ -57,6 +57,7 @@ t.test('calendars logistics', t=> {
 })
 
 t.test('calendar branch testing', t=>{
+  t.type(new Date().setReadOnlyError, 'undefined','readonly error cannot be retrieved')
   t.doesNotThrow(function(){new Date().getFullCalendarDates(new Date(13121312131))},{}, 'Month Starts After 1st Calendar Day')
   t.doesNotThrow(function(){new Date().getFullCalendarDates(new Date(1588478400000))},{}, 'Month Has Extra Week Row')
   t.end()

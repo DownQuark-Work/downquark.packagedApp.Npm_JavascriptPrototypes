@@ -1,14 +1,15 @@
 const stringFormats = () =>
 {
-  const setReadOnlyError = {set: function (y) { console.error('ERROR: This Property is READONLY') }}
+  // const setReadOnlyError = {set: function (y) { console.error('ERROR: This Property is READONLY') }}
+  function setReadOnlyError(y) { console.error('ERROR: This Property is READONLY') }
   Object.defineProperty(Date.prototype, 'DEV',
-    { get: function () { this.fmt = 'YYYYMMDD'; return this }, ...setReadOnlyError })
+    { get: function () { this.fmt = 'YYYYMMDD'; return this }, set: setReadOnlyError() })
   Object.defineProperty(Date.prototype, 'DIRECTORY',
-    { get: function () { this.fmt = 'YYYY-MM-DD'; return this }, ...setReadOnlyError })
+    { get: function () { this.fmt = 'YYYY-MM-DD'; return this }, set: setReadOnlyError() })
   Object.defineProperty(Date.prototype, 'STANDARD',
-    { get: function () { this.fmt = 'MM / DD / YYYY'; return this }, ...setReadOnlyError })
+    { get: function () { this.fmt = 'MM / DD / YYYY'; return this }, set: setReadOnlyError() })
   Object.defineProperty(Date.prototype, 'TITLE',
-    { get: function () { this.fmt = 'MM.DD YYYY'; return this }, ...setReadOnlyError })
+    { get: function () { this.fmt = 'MM.DD YYYY'; return this }, set: setReadOnlyError() })
   Date.prototype.formatDate = function(fm)
   {
     const dat = this,
