@@ -9,8 +9,6 @@ const msInDay = () =>
 const Proto = () =>
 { // defaults
   msInDay()
-    // can only initiate prototypes 1x
-  exports && delete exports.Defaults
   return true;
 }
 

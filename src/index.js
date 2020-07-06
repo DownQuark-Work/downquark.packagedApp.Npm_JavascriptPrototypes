@@ -10,7 +10,6 @@ const date = require('../dist/date.js')
 
 const Proto = () =>
 { // defaults
-console.log('typeof(array)',typeof(array))
   array.Defaults()
   math.Defaults()
   number.Defaults()

@@ -3,8 +3,8 @@ const t = require('tap'),
       strng = 'To be, or not to be, that is the question.'
 
 //force IE polyfills to be used
-if(String.prototype.endsWith){delete String.prototype.endsWith}
-if(String.prototype.padStart){delete String.prototype.padStart}
+String.prototype.endsWith = null
+String.prototype.padStart = null
 
 t.type(String.endsWith,'undefined', 'String method DNE')
 t.type(String.padStart,'undefined', 'String method DNE')

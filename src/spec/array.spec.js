@@ -10,6 +10,9 @@ t.type(Array.prototype.unique,'undefined', 'Array unique prototype DNE')
 // init prototypes
 arr()
 
+t.isNot(Array.prototype.last,'undefined', 'Array last prototype Exists')
+t.isNot(Array.prototype.len,'undefined', 'Array len prototype Exists')
+
 const arrBase = []
 let a = 0
 while (a < 20) {

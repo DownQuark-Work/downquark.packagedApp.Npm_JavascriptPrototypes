@@ -13,7 +13,8 @@ t.test('Number returns as offset miliseconds', t => {
   const dateTime = 1313131313131  
   t.equals(new Date(dateTime).getTime(), dateTime, 'Ensure we are starting at correct interval')
   t.equals(new Date(dateTime).getTime().msOffset('12d'),1314168113131, 'correct time 12 days in advance')
-  t.throws(function(){new Date(dateTime).getTime().msOffset('nomatch')},{},'msOffset property must have required parameters')
+  t.throws(function(){new Date(dateTime).getTime().msOffset('abc')},{message:'invalid usage. Please ensure the argument matches this pattern /(s|m|h|d|w|M|y)/'},'msOffset property must have required parameters')
+  t.throws(function(){new Date(dateTime).getTime().msOffset('nomatch')},{message:'an not be converted to an integer'},'msOffset property must have required parameters')
   t.equals(new Date(dateTime).getTime().msOffset('-13M'), 1279435313131, 'Correct time 13 months previous')
   t.equals(new Date(dateTime).getTime().msOffset('-13 Monkeys being happy'),new Date(dateTime).getTime().msOffset('-13 Mummified scones'), 'correct string parsing')
 

@@ -1,21 +1,15 @@
 
 const last = () => {
-  if (!Array.prototype.last) // Needed if using hmr
-  {
-    Object.defineProperty(Array.prototype, 'last', {
+  Object.defineProperty(Array.prototype, 'last', {
       get: function ():number { return this[this.length - 1] },
       set: function (y) { throw new Error('ERROR: last Property is READONLY') }
     })
-  }
 }
 const len = () => {
-  if (!Array.prototype.len) // Needed if using hmr
-  {
-    Object.defineProperty(Array.prototype, 'len', {
-      get: function ():number { return this.length - 1 },
-      set: function (y) { throw new Error('ERROR: len Property is READONLY') }
-    })
-  }
+  Object.defineProperty(Array.prototype, 'len', {
+    get: function ():number { return this.length - 1 },
+    set: function (y) { throw new Error('ERROR: len Property is READONLY') }
+  })
 }
 const shuffle = () => {
   Array.prototype.shuffle = function<T>():Array<T>
@@ -46,8 +40,6 @@ const Proto = () =>
   len()
   shuffle()
   unique()
-    // can only initiate prototypes 1x
-  exports && delete exports.Defaults
   return true;
 }
 

@@ -103,8 +103,6 @@ const Proto = () =>
   stringFormats()
   makeReadable()
   ranged()
-    // can only initiate prototypes 1x
-  exports && delete exports.Defaults
   return true;
 }
 
