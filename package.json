@@ -29,7 +29,7 @@
     "xflow-typed": "rimraf flow-typed/npm && flow-typed install",
     "xpostinstall": "yarn flow-typed",
     "xprepublish": "yarn run build",
-    "zsedit": "sed 's|[a-zA-Z]* |DELETED |g'  <./package.json >./publish/module/packageX.json",
+    "zsedit": "sed 's|[a-zA-Z]* |DELETED |g'  <./package.json >./publish/module/package.json",
     "sedit": "sed ' s|\\.js\",|.js\"}|g ; /main/q' <./package.json >./publish/module/packageX.json",
     "test:info": "by building first we remove the flow annotations that is needed by tap",
     "test": "yarn run build && tap --debug --strict --100",
