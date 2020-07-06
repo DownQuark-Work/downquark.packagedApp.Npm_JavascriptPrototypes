@@ -9,7 +9,11 @@
 </p>
 
 ---
-> Creating a commonly used set of functions that also signals the official start of DownQuark’s commitment to Open Source.
+> An open source snippet manager that binds directly to javascript primitives.
+> - Create a snippet that modifies a string
+>   - Require and use the snippet immediately
+>   - `'MySring'.mySnippetFunction()`
+> - Share your favorite snippets by making a Pull Request and see them in the next version of this package!
 
 ## Table of contents
 

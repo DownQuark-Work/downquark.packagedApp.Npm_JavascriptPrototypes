@@ -1,7 +1,7 @@
 {
   "name": "@downquark/proto-snips",
-  "version": "0.1.1-0",
-  "description": "DownQuark's commonly used set of javascript functions",
+  "version": "0.0.1-0",
+  "description": "DownQuark's usable snippet manager",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets.git"
