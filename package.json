@@ -6,8 +6,8 @@
     "type": "git",
     "url": "git+https://github.com/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets.git"
   },
-  "keywords": [],
-  "author": "mlnck",
+  "keywords": ["downquark","javascript","utilities","prototype","snippets","TAP-100"],
+  "author": "dq-mlnck",
   "license": "GPL-3.0-only",
   "bugs": {
     "url": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets/issues"
