@@ -26,6 +26,7 @@
     "flow": "rimraf flow-typed/stubs/flow/flowlib*/core.js && flow",
     "flow:clrtmp": "rimraf flow-typed/stubs/flow/*",
     "flow:ls": "yarn flow ls",
+    "linkit": "cd publish/module && npm link && cd - && cd publish/sandbox && npm link @downquark/proto-snips && cd - && yarn dev",
     "sedit": "sed ' s|\\.js\",|.js\"}|g ; /main/q' <./package.json >./publish/module/package.json",
     "test:info": "by building first we remove the flow annotations that is needed by tap",
     "test": "yarn run build && tap --debug --strict --100",

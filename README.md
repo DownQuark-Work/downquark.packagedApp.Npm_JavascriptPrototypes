@@ -2,9 +2,9 @@
 
 <p align="center">
 
-|||
-|:-:|:-:|
-![GitHub](https://img.shields.io/github/license/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets)|![codecov](https://codecov.io/gh/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets/branch/master/graph/badge.svg)|
+||||
+|:-:|:-:|:-:|
+![GitHub](https://img.shields.io/github/license/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets)|![codecov](https://codecov.io/gh/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets/branch/master/graph/badge.svg)|![npm](https://img.shields.io/npm/dt/@downquark/proto-snips)|
 ![npm (scoped)](https://img.shields.io/npm/v/@downquark/proto-snips)|![GitHub package.json version](https://img.shields.io/github/package-json/v/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets)|
 </p>
 
@@ -92,13 +92,15 @@ Next steps will be to port over relevant snippets from [30 seconds of code](http
 - To view your work locally
   - Complete the [Build](#build) process to the point where `$ yarn flow` populates the `dist` directory
   - `$ yarn build:parcel`
-  - `$ cd publish/module && npm link && cd - && yarn dev`
+  - `$ yarn linkit`
     - If a browser does not automatically open, navigate to [http://0.0.0.0:1313](http://0.0.0.0:1313)
       - The `proto-snips` package is loaded and initialized as it will be for the end user
       - Verify working code using your normal processes
+    - `linkit` only needs to be run once. Run `yarn dev` for subsequent builds.
 
 ## Current Modules & Methods
 
+View the current snippets on [github pages](https://downquark-work.github.io/downquark.packagedApp.Npm_ProtoSnippets/publish/sandbox/index.html)
 <details>
   <summary>Array</summary>
 
