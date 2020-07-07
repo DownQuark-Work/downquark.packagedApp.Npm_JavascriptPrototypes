@@ -9,6 +9,8 @@
   <script>
     const ProtoSnippets = require('@downquark/proto-snips')
     console.log('ProtoSnippets', ProtoSnippets)
+    for(let k in ProtoSnippets.include)
+    { ProtoSnippets.include[k].Defaults() }
   </script>
   <style>
     .card{float:left;margin:1.5%;width:30%}
@@ -45,7 +47,7 @@
     </div>
   </div>
   <footer class="card-footer">
-    <a href="#" class="card-footer-item">See it in action</a>
+    <a href="#" class="card-footer-item" onclick="console.log([1,2,3,4].last)">see it in action [console.log]</a>
   </footer>
 </div>
 
