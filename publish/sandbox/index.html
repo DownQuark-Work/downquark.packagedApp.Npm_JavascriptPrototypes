@@ -1,15 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Javascript Sandbox ProtoSnips</title>
+  <link rel="stylesheet" href="./bulma.min.css" />
   <script>
     const ProtoSnippets = require('@downquark/proto-snips')
-    console.log('ProtoSnippets',ProtoSnippets)
+    console.log('ProtoSnippets', ProtoSnippets)
   </script>
+  <style>
+    .card{float:left;margin:1.5%;width:30%}
+    details{clear:both}
+  </style>
 </head>
+
 <body>
-  Sandbox
+  <section class="section">
+    <div class="container">
+
+<h4>Examples:</h4>
+<p>Below you will find working examples of all of the snippets that are included with this version of the downquark.packagedApp.Npm_ProtoSnippets package.
+  <br/> Please turn on dev tools as a few of them are only verifyiable via the console.
+</p>
+<p>&nbsp;</p>
+  <details>
+    <summary>Array</summary>
+
+  <div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      last
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content" >
+    <div class="content">
+      Returns array with duplicate elements removed without modifying original array
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">See it in action</a>
+  </footer>
+</div>
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      len
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      Returns the 0 index based length of the array\
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">See it in action</a>
+  </footer>
+</div>
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      shuffle
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content" >
+    <div class="content">
+      Shuffles elements in original array and returns modified data
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">See it in action</a>
+  </footer>
+</div>
+
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      unique
+    </p>
+    <a href="#" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content" >
+    <div class="content">
+      Returns the last element of the array without modifying the original array
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">See it in action</a>
+  </footer>
+  </details>
+
+<hr/>
+
+  <details>
+    <summary>Console</summary>
+    <table>
+      <thead>
+        <tr>
+          <th>method</th>
+          <th style="text-align:right"><em>description</em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <strong>consoleDev</strong></td>
+          <td style="text-align:right"><em>A more concise version of <a
+        href="https://www.npmjs.com/package/qonsole">qonsole</a></em></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><em>NOTE:</em></td>
+          <td style="text-align:right">Quite a bit going on here.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <hr />
+  <details>
+    <summary>Date</summary>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th>method</th>
+          <th style="text-align:right"><em>description</em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <strong>stringFormats</strong></td>
+          <td style="text-align:right"><em>Returns date in specified format</em></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right"><code>new Date().STANDARD.formatDate() // &#39;07 / 01 / 2020&#39;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <strong>makeReadable</strong></td>
+          <td style="text-align:right"><em>Returns human readable values for days and months</em></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right"><code>new Date().getNamedDay(3) // &#39;Wed&#39;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right"><code>new Date().getNamedDay(3,true) // &#39;Wednesday&#39;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <strong>ranged</strong></td>
+          <td style="text-align:right"><em>Formats and returns requested data for use with date ranges</em></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right">
+            <code>new Date().getEpochRange(&#39;jan 2020&#39;,&#39;feb 2020&#39;) // [1577854800000, 1580533200000]</code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right">
+            <code>new Date().getRandomDate() // defaults to a 30 day range with _new Date()_ as mid-point</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <strong>calendar</strong></td>
+          <td style="text-align:right"><em>Returns all information needed to render a calendar grid</em></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right"><code>new Date().getFullCalendarDates(CALENDAR_STARTING_POINT)</code></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <hr />
+  <details>
+    <summary>Math</summary>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th>method</th>
+          <th style="text-align:right"><em>description</em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <strong>msInDay</strong></td>
+          <td style="text-align:right"><em>Returns the number of miliseconds in a 24 hour period</em></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right"><code>Math.msInDay // 86400000</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>TODO:</em></td>
+          <td style="text-align:right">move this to <code>Number</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <hr />
+  <details>
+    <summary>Number</summary>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th>method</th>
+          <th style="text-align:right"><em>description</em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <strong>msOffset</strong></td>
+          <td style="text-align:right"><em>Returns timestamp of a date specified by an offset</em></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right">
+            <code>new Date(dateTime).getTime().msOffset(&#39;-13M&#39;) //  timestamp for a day 13 months previous: 86400000</code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>TODO:</em></td>
+          <td style="text-align:right">move this to <code>Math</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+
+  <hr />
+  <details>
+    <summary>String</summary>
+    <table>
+      <thead>
+        <tr>
+          <th>method</th>
+          <th style="text-align:right"><em>description</em></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <strong>endsWith</strong></td>
+          <td style="text-align:right"><em>Returns boolean based on end of string search criteria and optional specified
+        offset</em></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right"><code>&#39;I have a question.&#39;.endsWith(&#39;question.&#39;) // true</code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right"><code>&#39;I have a question.&#39;.endsWith(&#39;have&#39;,6)&#39; // true</code>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <strong>padStart</strong></td>
+          <td style="text-align:right"><em>Returns string with leading padding of spaced or optional specified
+        character(s)</em></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right"><code>&#39;abc&#39;.padStart(&#39;10&#39;) // &#39;     abc&#39;</code></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td> <em>Example:</em></td>
+          <td style="text-align:right">
+            <code>&#39;abc&#39;.padStart(&#39;10&#39;, &quot;foo&quot;) // &#39;foofoofabc&#39;</code></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+  </div>
+  </section>
 </body>
+
 </html>
