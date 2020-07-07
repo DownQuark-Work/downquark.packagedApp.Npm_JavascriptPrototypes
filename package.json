@@ -30,7 +30,7 @@
     "sedit": "sed ' s|\\.js\",|.js\"}|g ; /main/q' <./package.json >./publish/module/package.json",
     "test:info": "by building first we remove the flow annotations that is needed by tap",
     "test": "yarn run build && tap --debug --strict --100",
-    "posttest": "tap --coverage-report=text-lcov | codecov -t 'b44a721c-721b-4aba-9599-fd2fcd9dd534'",
+    "posttest": "tap --coverage-report=text-lcov | codecov -t $CODECOVxPROTOSNIPPETS",
     "test:coverage": "yarn run build && tap --strict --coverage-report=json",
     "test:dev:bail": "yarn run build && tap --strict --bail --save=coverage/failures.txt",
     "test:dev": "yarn run build && tap --strict --bail --save=coverage/failures.txt"
