@@ -33,7 +33,7 @@
     "test:dev:bail": "yarn run build && tap --strict --bail --save=coverage/failures.txt",
     "test:dev": "yarn run build && tap --strict --bail --save=coverage/failures.txt",
     "test:info": "by building first we remove the flow annotations that is needed by tap",
-    "test": "yarn run build && tap --debug --strict --100",
+    "test": "yarn run build && tap --debug --strict --100"
   },
   "module": "publish/module/index.js",
   "sandbox": "publish/sandbox/index.html",

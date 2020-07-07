@@ -1,4 +1,4 @@
-# downquark.work Javascript Prototypes
+# downquark.work Snippet Manager Integrated with Prototypical Inheritance
 
 <p align="center">
 
@@ -9,7 +9,7 @@
 </p>
 
 ---
-> An open source snippet manager that binds directly to javascript primitives.
+> An open source snippet manager utilizing javascript's prototypical inheritance that allows immediate integration into projects.
 > - Create a snippet that modifies a string
 >   - Require and use the snippet immediately
 >   - `'MySring'.mySnippetFunction()`
@@ -17,7 +17,7 @@
 
 ## Table of contents
 
-- [downquark.work Javascript Prototypes](#downquarkwork-javascript-prototypes)
+- [downquark.work Snippet Manager Integrated with Prototypical Inheritance](#downquarkwork-snippet-manager-integrated-with-prototypical-inheritance)
   - [Table of contents](#table-of-contents)
   - [Common usage](#common-usage)
   - [Installation](#installation)
@@ -27,6 +27,7 @@
     - [Iterate](#iterate)
   - [Current Modules & Methods](#current-modules--methods)
   - [Mini-Roadmap](#mini-roadmap)
+
 ## Common usage
 Using CommonJS for these to help differentiate between AMD/RequireJS modules commonly reused in projects. Any prototypes being used should be imported and instantiated a single time.
 You will be able to specify which prototypes you wish to by importing the `Default` set of the module, or handpicking using the `include` method.
@@ -35,7 +36,7 @@ Currently, you can choose defaults, individuals, or add non-defaults
 ## Installation
 To import and init the defaults only:
 - `const Prototypes = require('@downquark/proto-snips').Defaults()`
-- 
+
 To select and initialize non-default methods:
 ```
 const {konsole, date} = require('@downquark/proto-snips').include
@@ -49,7 +50,14 @@ const _2 = require('@downquark/proto-snips').include.date.Defaults()
 ```
 
 This way of handling prototypes allows for easy scalability. We can create as many methods as we like without concern of package size or code bloat because we only import what is needed per project. e.g.:
-` const multi-level-nested-prototype = require('@downquark/proto-snips').include.date.include.calendar.include.moonCycles.include.waning()`
+```
+const multi-level-nested-prototype =
+  require('@downquark/proto-snips')
+    .include.date
+      .include.calendar
+        .include.moonCycles
+          .include.waning()
+```
 
 We will continue to update this library with helpful snippets - while ensuring that we keep _**100**_% [code coverage](./CONTRIBUTING.md#Testing)
 
@@ -130,7 +138,7 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
   -|-:|
   **stringFormats**| _Returns date in specified format_|
   _Example:_|`new Date().STANDARD.formatDate() // '07 / 01 / 2020'`|
-  **makeReadable**| _Returns human readable values for days and monts_|
+  **makeReadable**| _Returns human readable values for days and months_|
   _Example:_|`new Date().getNamedDay(3) // 'Wed'`|
   _Example:_|`new Date().getNamedDay(3,true) // 'Wednesday'`|
   **ranged**| _Formats and returns requested data for use with date ranges_|
@@ -175,4 +183,6 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
 - [ ] Enable snippet management via a config / rc file
   - [ ] Enable snippet management via a GUI
 - [ ] Enable option to collect anonymous data about usage of snippets
+- [ ] Enable pattern matching to allow suggestion tooltips within the IDE
+  - e.g. Developer writes something similar to `() => arr.length-1` and the IDE gives prompt to include _array.len_ and a usage example `[1,2,3].len // 2`
 - [ ] Extend to include multiple languages
