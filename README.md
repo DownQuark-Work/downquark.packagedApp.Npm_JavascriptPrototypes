@@ -26,6 +26,7 @@
     - [Build](#build)
     - [Iterate](#iterate)
   - [Current Modules & Methods](#current-modules--methods)
+  - [Mini-Roadmap](#mini-roadmap)
 ## Common usage
 Using CommonJS for these to help differentiate between AMD/RequireJS modules commonly reused in projects. Any prototypes being used should be imported and instantiated a single time.
 You will be able to specify which prototypes you wish to by importing the `Default` set of the module, or handpicking using the `include` method.
@@ -51,7 +52,6 @@ This way of handling prototypes allows for easy scalability. We can create as ma
 ` const multi-level-nested-prototype = require('@downquark/proto-snips').include.date.include.calendar.include.moonCycles.include.waning()`
 
 We will continue to update this library with helpful snippets - while ensuring that we keep _**100**_% [code coverage](./CONTRIBUTING.md#Testing)
-Next steps will be to port over relevant snippets from [30 seconds of code](https://www.30secondsofcode.org/js/p/1).
 
 ## Local Build Process
 ### Setup
@@ -169,3 +169,10 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
   _Example:_|`'abc'.padStart('10') // '       abc'`|
   _Example:_|`'abc'.padStart('10', "foo") // 'foofoofabc'`|
 </details>
+
+## Mini-Roadmap
+- [ ] Port relevant snippets from [30 seconds of code](https://www.30secondsofcode.org/js/p/1)
+- [ ] Enable snippet management via a config / rc file
+  - [ ] Enable snippet management via a GUI
+- [ ] Enable option to collect anonymous data about usage of snippets
+- [ ] Extend to include multiple languages
