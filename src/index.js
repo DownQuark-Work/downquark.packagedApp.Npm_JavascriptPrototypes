@@ -16,7 +16,7 @@ const Proto = () =>
   string.Defaults()
     // can only initiate prototypes 1x
   exports && delete exports.Defaults
-  return true;
+  return true
 }
 
 exports.Defaults = Proto

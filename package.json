@@ -6,7 +6,14 @@
     "type": "git",
     "url": "git+https://github.com/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets.git"
   },
-  "keywords": ["downquark","javascript","utilities","prototype","snippets","TAP-100"],
+  "keywords": [
+    "downquark",
+    "javascript",
+    "utilities",
+    "prototype",
+    "snippets",
+    "TAP-100"
+  ],
   "author": "dq-mlnck",
   "license": "GPL-3.0-only",
   "bugs": {
@@ -46,12 +53,18 @@
       "sourceMap": false
     },
     "sandbox": {
-      "engines": { "browsers": ["> 1%","not dead"] },
+      "engines": {
+        "browsers": [
+          "> 1%",
+          "not dead"
+        ]
+      },
       "isLibrary": true
     }
   },
   "devDependencies": {
     "codecov": "^3.7.0",
+    "eslint": "^7.4.0",
     "flow": "^0.2.3",
     "flow-bin": "^0.128.0",
     "flow-remove-types": "^2.128.0",

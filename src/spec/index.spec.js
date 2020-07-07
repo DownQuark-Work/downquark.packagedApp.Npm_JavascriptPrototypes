@@ -1,5 +1,5 @@
 const t = require('tap'),
-      Prototypes = require('../index.js')
+    Prototypes = require('../index.js')
 
 // remove prototypes for base testing
 if(String.prototype.endsWith){delete String.prototype.endsWith}
@@ -30,7 +30,7 @@ t.test('Can import default prototypes', t => {
 
   t.type(console.devCount,'undefined', 'Console method DNE')
   t.type(Date.daysOfWeek,'undefined', 'Date method DNE')
-  t.end()
+  t.end();
 })
 
 t.test('Can import specific prototypes', t => {
