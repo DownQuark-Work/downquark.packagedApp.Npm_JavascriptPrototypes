@@ -26,6 +26,7 @@
     - [Build](#build)
     - [Iterate](#iterate)
   - [Current Modules & Methods](#current-modules--methods)
+    - [TODO: prior to npm publish](#todo-prior-to-npm-publish)
   - [Mini-Roadmap](#mini-roadmap)
 
 ## Common usage
@@ -178,8 +179,13 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
   _Example:_|`'abc'.padStart('10', "foo") // 'foofoofabc'`|
 </details>
 
+### TODO: prior to npm publish
+- [ ] Incorporate [Guidelines](https://github.com/Kristories/awesome-guidelines)
+
 ## Mini-Roadmap
-- [ ] Port relevant snippets from [30 seconds of code](https://www.30secondsofcode.org/js/p/1)
+- [ ] Port relevant snippets from:
+  - [ ] [30 seconds of code](https://www.30secondsofcode.org/js/p/1)
+  - [ ] [web dev]https://web.dev/web-animations/
 - [ ] Enable snippet management via a config / rc file
   - [ ] Enable snippet management via a GUI
 - [ ] Enable option to collect anonymous data about usage of snippets
