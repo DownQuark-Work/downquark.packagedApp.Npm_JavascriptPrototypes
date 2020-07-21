@@ -26,7 +26,7 @@
     - [Build](#build)
     - [Iterate](#iterate)
   - [Current Modules & Methods](#current-modules--methods)
-    - [TODO: prior to npm publish](#todo-prior-to-npm-publish)
+    - [TODO: prior to removing npm prerelease semver](#todo-prior-to-removing-npm-prerelease-semver)
   - [Mini-Roadmap](#mini-roadmap)
 
 ## Common usage
@@ -179,7 +179,10 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
   _Example:_|`'abc'.padStart('10', "foo") // 'foofoofabc'`|
 </details>
 
-### TODO: prior to npm publish
+### TODO: prior to removing npm prerelease semver
+- [ ] Create method to import all snippets
+- [ ] Incorporate MDN's polyfills
+- [ ] Include all Snippets within Sandbox
 - [ ] Incorporate [Guidelines](https://github.com/Kristories/awesome-guidelines)
 
 ## Mini-Roadmap
