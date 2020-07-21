@@ -8,7 +8,7 @@ const string = require('../dist/string.js')
 const konsole = require('../dist/console.js')
 const date = require('../dist/date.js')
 // polyfills
-const polyfills = require('../dist/mdn-polyfills.js')
+const polyfills = () => true;// require('../dist/mdn-polyfills.js')
 
 
 const Proto = () =>
