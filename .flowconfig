@@ -37,12 +37,6 @@ module.file_ext=.jsx
 module.name_mapper='*.core.js' -> '<PROJECT_ROOT>/flow-typed/downquark/core.js'
 💩 Below is for use with webpack
 💩module.name_mapper='.*\(png|svg|jpe?g|gif|ico\)$' -> '<PROJECT_ROOT>/flow-typed/stubs/npm/file-loader_vx.x.x.js'
-; suppress_comment=.*\$FlowTest
-; suppress_comment= \\(.\\|\n\\)*\\$FlowTempDisable
-; suppress_comment= \\(.\\|\n\\)*\\$FlowPermanentDisable
-; suppress_comment= \\(.\\|\n\\)*\\$FlowExpectedError
-; suppress_comment= \\(.\\|\n\\)*\\$FlowIssue
-; suppress_comment= \\(.\\|\n\\)*\\$FlowNonIssue
 suppress_type=$FlowCurrentlyInDevelopment
 suppress_type=$FlowDebug
 suppress_type=$FlowExpectedError
@@ -54,6 +48,5 @@ temp_dir=flow-typed/stubs/flow
 💩munge_underscores=true
 
 [version]
-^0.128.0
 
 [declarations]
