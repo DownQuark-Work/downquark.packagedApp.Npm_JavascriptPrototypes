@@ -6,8 +6,10 @@
 .*/cache/.*
 .*/flow-typed/.*
 .*/spec/.*
+.*/dist/mdn*
 <PROJECT_ROOT>/\.\w*
 <PROJECT_ROOT>/coverage/*
+<PROJECT_ROOT>/src/js/mdn*
 <PROJECT_ROOT>/node_modules/*
 <PROJECT_ROOT>/publish/*
 
