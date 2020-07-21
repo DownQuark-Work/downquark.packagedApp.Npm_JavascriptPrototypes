@@ -7,6 +7,9 @@ const string = require('../dist/string.js')
 // explicit
 const konsole = require('../dist/console.js')
 const date = require('../dist/date.js')
+// polyfills
+const polyfills = require('../dist/mdn-polyfills.js')
+
 
 const Proto = () =>
 { // defaults
@@ -21,3 +24,5 @@ const Proto = () =>
 
 exports.Defaults = Proto
 exports.include = {array, math, number, string, konsole, date}
+exports.Polyfills = polyfills.Defaults
+exports.polyfill = polyfills.include

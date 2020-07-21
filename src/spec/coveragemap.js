@@ -1,1 +1,1 @@
-module.exports = test => []
+module.exports = test => { console.log(test); return []}
