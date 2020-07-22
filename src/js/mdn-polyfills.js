@@ -93,5 +93,5 @@ const Proto = () =>
   return true;
 }
 
-exports.Defaults:any = Proto
+exports.Defaults = Proto
 exports.include = { arrayFill, arrayFilter, arrayFind, arrayFindIndex, arrayForEach, arrayFrom, arrayIncludes, arrayOf, arrayReduce, arraySome, customEvent, elementClassList, elementClosest, elementGetAttributeNames, elementMatches, elementToggleAttribute, functionBind, hTMLCanvasElementToBlob, mouseEvent, nodeAddEventListener, nodeAfter, nodeAppend, nodeBefore, nodeChildren, nodeFirstElementChild, nodeListForEach, nodePrepend, nodeRemove, nodeReplaceWith, numberIsInteger, numberIsNaN, objectAssign, objectCreate, objectEntries, objectKeys, objectValues, stringEndsWith, stringIncludes, stringPadEnd, stringPadStart, stringRepeat, stringStartsWith, stringTrim, }
