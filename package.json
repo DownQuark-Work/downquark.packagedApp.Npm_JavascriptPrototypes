@@ -64,7 +64,7 @@
     }
   },
   "devDependencies": {
-    "codecov": "^3.7.0",
+    "codecov": "^3.7.1",
     "eslint": "^7.4.0",
     "flow": "^0.2.3",
     "flow-bin": "^0.129.0",
