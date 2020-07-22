@@ -1,7 +1,7 @@
 // @flow // have to keep this annotation for TAP tests
 
 // mdn polyfills
-// const polyfills = require('./js/mdn-polyfills.js')
+const polyfills = require('./js/mdn-polyfills.js')
 // defaults
 const array = require('../dist/array.js')
 const math = require('../dist/math.js')
@@ -25,5 +25,5 @@ const Proto = () =>
 
 exports.Defaults = Proto
 exports.include = {array, math, number, string, konsole, date}
-// exports.Polyfills = polyfills.Defaults
-// exports.polyfill = {...polyfills.include}
+exports.Polyfills = polyfills.Defaults
+exports.polyfill = {...polyfills.include}
