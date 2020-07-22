@@ -45,7 +45,8 @@ const stringStartsWith = require('./mdn-polyfills/String.prototype.startsWith/in
 const stringTrim = require('./mdn-polyfills/String.prototype.trim/index.js')
 
 const Proto = () =>
-{ // defaults
+{ console.log('polyfills loaded')
+ // defaults
   arrayFill()
   arrayFilter()
   arrayFind()
@@ -92,5 +93,5 @@ const Proto = () =>
   return true;
 }
 
-exports.Defaults = Proto
+exports.Defaults:any = Proto
 exports.include = { arrayFill, arrayFilter, arrayFind, arrayFindIndex, arrayForEach, arrayFrom, arrayIncludes, arrayOf, arrayReduce, arraySome, customEvent, elementClassList, elementClosest, elementGetAttributeNames, elementMatches, elementToggleAttribute, functionBind, hTMLCanvasElementToBlob, mouseEvent, nodeAddEventListener, nodeAfter, nodeAppend, nodeBefore, nodeChildren, nodeFirstElementChild, nodeListForEach, nodePrepend, nodeRemove, nodeReplaceWith, numberIsInteger, numberIsNaN, objectAssign, objectCreate, objectEntries, objectKeys, objectValues, stringEndsWith, stringIncludes, stringPadEnd, stringPadStart, stringRepeat, stringStartsWith, stringTrim, }

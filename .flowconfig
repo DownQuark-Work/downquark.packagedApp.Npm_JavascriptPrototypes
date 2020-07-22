@@ -8,6 +8,7 @@
 .*/spec/.*
 <PROJECT_ROOT>/\.\w*
 <PROJECT_ROOT>/coverage/*
+<PROJECT_ROOT>/dist/mdn-polyfills/**
 <PROJECT_ROOT>/src/js/mdn-polyfills/*
 <PROJECT_ROOT>/node_modules/*
 <PROJECT_ROOT>/publish/*
@@ -15,9 +16,11 @@
 [untyped]
 .*/dist/*
 
+
 [libs]
-💩 use custom core.js to declare prototype definitions
-💩 <PROJECT_ROOT>/flow-typed/downquark/*
+💩 use custom [flow-typed/downquark.core.js] to declare prototype definitions
+💩  > flow-typed directory recursively added by default
+
 
 [lints]
 
@@ -34,7 +37,6 @@ module.file_ext=.json
 module.file_ext=.jsx
 💩module.file_ext=.css
 💩module.file_ext=.scss
-💩module.name_mapper='.*\(.s?css\)' -> 'empty/object'
 💩module.name_mapper='.*\(.s?css\)' -> 'empty/object'
 module.name_mapper='*.core.js' -> '<PROJECT_ROOT>/flow-typed/downquark/core.js'
 💩 Below is for use with webpack

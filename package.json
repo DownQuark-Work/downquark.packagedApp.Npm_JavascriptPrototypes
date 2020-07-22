@@ -4,7 +4,7 @@
   "description": "DownQuark's usable snippet manager",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets.git"
+    "url": "git+https://github.com/DownQuark-Work/downquark.packagedUtilities.NPM_ProtoSnippets.git"
   },
   "keywords": [
     "downquark",
@@ -17,22 +17,22 @@
   "author": "dq-mlnck",
   "license": "GPL-3.0-only",
   "bugs": {
-    "url": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets/issues"
+    "url": "https://github.com/DownQuark-Work/downquark.packagedUtilities.NPM_ProtoSnippets/issues"
   },
-  "homepage": "https://github.com/DownQuark-Work/downquark.packagedApp.Npm_ProtoSnippets#readme",
-  "main": "src/index.js",
+  "homepage": "https://github.com/DownQuark-Work/downquark.packagedUtilities.NPM_ProtoSnippets#readme",
+  "main": "index.js",
   "browserslist": [
     "> 1%",
     "not dead"
   ],
   "scripts": {
     "build:parcel": "rimraf publish/module/* && parcel build src/index.js --target module && cp package.json README.md publish/module/ && yarn sedit",
-    "build": "flow-remove-types --all src/js -d dist/",
+    "build": "flow-remove-types --all src/js -d dist/ && rm -rf dist/mdn*",
     "dev": "parcel publish/sandbox/index.html --target sandbox --open --port 1313",
     "flow:clrtmp": "rimraf flow-typed/stubs/flow/*",
     "flow:info": "we have to remove core.js for prototypes to run - results in having to run flow 2x on server start to run without errors",
-    "flow:ls": "yarn flow ls",
     "flow:init": "rimraf flow-typed/stubs/flow/flowlib* && flow start && rimraf flow-typed/stubs/flow/flowlib*/core.js && flow status && rimraf flow-typed/stubs/flow/flowlib*",
+    "flow:ls": "yarn flow ls",
     "flow:status":"flow status",
     "linkit": "cd publish/module && npm link && cd - && cd publish/sandbox && npm link @downquark/proto-snips && cd - && yarn dev",
     "posttest": "tap --coverage-report=text-lcov | codecov -t $CODECOVxPROTOSNIPPETS",
