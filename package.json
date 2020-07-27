@@ -26,8 +26,9 @@
     "not dead"
   ],
   "scripts": {
-    "build:parcel": "rimraf publish/module/* && parcel build src/index.js --target module && cp package.json README.md publish/module/ && yarn sedit",
-    "build": "flow-remove-types --all src/js -d dist/ && rm -rf dist/mdn*",
+    "build:parcel": "rimraf publish/module/* && parcel build dist/* --target module && cp package.json README.md publish/module/ && yarn sedit",
+    "zbuild:parcel": "rimraf publish/module/* && parcel build src/index.js --target module && cp package.json README.md publish/module/ && yarn sedit",
+    "build": "flow-remove-types --all src/js -d dist/",
     "dev": "parcel publish/sandbox/index.html --target sandbox --open --port 1313",
     "flow:clrtmp": "rimraf flow-typed/stubs/flow/*",
     "flow:info": "we have to remove core.js for prototypes to run - results in having to run flow 2x on server start to run without errors",
@@ -36,6 +37,7 @@
     "flow:status": "flow status",
     "linkit": "cd publish/module && npm link && cd - && cd publish/sandbox && npm link @downquark/proto-snips && cd - && yarn dev",
     "lint": "eslint -c configs/eslint.config.js --ignore-path configs/.eslintignore",
+    "postbuild": "parcel build src/js/mdn-polyfills.js --target mdnpoly && rimraf dist/mdn-polyfills && mv dist/mdnpoly/mdn-polyfills.js dist/mdn-polyfills.js && rimraf mdn-polyfills.js.map && mv dist/mdnpoly/mdn-polyfills.js.map mdn-polyfills.js.map && rimraf dist/mdnpoly",
     "posttest:codecov": "tap --coverage-report=text-lcov | codecov -t $CODECOVxPROTOSNIPPETS",
     "sedit": "sed ' s|\\.js\",|.js\"}|g ; /main/q' <./package.json >./publish/module/package.json",
     "test:coverage": "yarn run build && tap --rcfile=configs/.taprc --strict --coverage-report=json",
@@ -47,6 +49,14 @@
   "module": "publish/module/index.js",
   "sandbox": "publish/sandbox/index.html",
   "targets": {
+    "mdnpoly": {
+      "engines": {
+        "node": ">=8.x"
+      },
+      "outputFormat": "commonjs",
+      "distDir": "dist",
+      "sourceMap": true
+    },
     "module": {
       "engines": {
         "node": ">=8.x"

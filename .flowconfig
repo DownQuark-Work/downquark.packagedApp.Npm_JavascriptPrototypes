@@ -8,8 +8,6 @@
 .*/spec/.*
 <PROJECT_ROOT>/\.\w*
 <PROJECT_ROOT>/coverage/*
-<PROJECT_ROOT>/dist/mdn-polyfills/**
-<PROJECT_ROOT>/src/js/mdn-polyfills/*
 <PROJECT_ROOT>/node_modules/*
 <PROJECT_ROOT>/publish/*
 
