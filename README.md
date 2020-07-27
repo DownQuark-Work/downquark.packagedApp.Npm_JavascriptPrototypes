@@ -57,7 +57,7 @@ const multi-level-nested-prototype =
     .include.date
       .include.calendar
         .include.moonCycles
-          .include.waning()
+          .include.waxing()
 ```
 
 We will continue to update this library with helpful snippets - while ensuring that we keep _**100**_% [code coverage](./CONTRIBUTING.md#Testing)
@@ -181,7 +181,8 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
 
 ### TODO: prior to removing npm prerelease semver
 - [ ] Create method to import all snippets
-- [ ] Incorporate MDN's polyfills
+- [x] Incorporate MDN's polyfills
+  - Utilizes [https://github.com/msn0/mdn-polyfills](https://github.com/msn0/mdn-polyfills)
 - [ ] Include all Snippets within Sandbox
 - [ ] Incorporate [Guidelines](https://github.com/Kristories/awesome-guidelines)
 
