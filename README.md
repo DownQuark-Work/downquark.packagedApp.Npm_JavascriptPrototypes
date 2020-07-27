@@ -183,10 +183,9 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
 - [ ] Create method to import all snippets
 - [x] Incorporate MDN's polyfills
   - Utilizes [https://github.com/msn0/mdn-polyfills](https://github.com/msn0/mdn-polyfills)
-- [ ] Include all Snippets within Sandbox
-- [ ] Incorporate [Guidelines](https://github.com/Kristories/awesome-guidelines)
 
 ## Mini-Roadmap
+- [ ] Include all Snippets within Sandbox
 - [ ] Port relevant snippets from:
   - [ ] [30 seconds of code](https://www.30secondsofcode.org/js/p/1)
   - [ ] [web dev]https://web.dev/web-animations/
@@ -196,3 +195,4 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
 - [ ] Enable pattern matching to allow suggestion tooltips within the IDE
   - e.g. Developer writes something similar to `() => arr.length-1` and the IDE gives prompt to include _array.len_ and a usage example `[1,2,3].len // 2`
 - [ ] Extend to include multiple languages
+- [ ] 
