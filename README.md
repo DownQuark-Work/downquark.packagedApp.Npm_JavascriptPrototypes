@@ -24,7 +24,9 @@
   - [Local Build Process](#local-build-process)
     - [Setup](#setup)
     - [Build](#build)
+    - [Test](#test)
     - [Iterate](#iterate)
+    - [Submit](#submit)
   - [Current Modules & Methods](#current-modules--methods)
     - [TODO: prior to removing npm prerelease semver](#todo-prior-to-removing-npm-prerelease-semver)
   - [Mini-Roadmap](#mini-roadmap)
@@ -80,35 +82,36 @@ We will continue to update this library with helpful snippets - while ensuring t
 
 ---
 ### Build
-- `$ yarn flow`
-  - The first time the server starts up this _**WILL ERROR**_
-    - TODO: Make this error go away
-  - Re-run `$ yarn flow`  up to 2 more times and the cache should be cleared and the correct `core.js` file will be referenced
-    - Duplicated files without flow typings will be created in the `dist` directory
+Due to flow's handling of `core.js` classes and prototypes each time you start the server you must do so in the following order:
+- `$ yarn build`
+- `$ yarn flow:init`
+  - Once flow server has started you can continue to run it normally with `$ yarn flow`
+
+### Test
 - `$ yarn test`
   - The tests will reference the `dist` directory files
-    - you will need to re-run flow with each update made to see the effect
-  - Continue testing until there is **100%** coverage
-    - Any PR that fails to comply with [The TAP 100](https://node-tap.org/docs/coverage/100/) will not be able to be accepted
+
+---
+### Iterate
+- To view your work locally
+  - `$ yarn build:dev` create a development build
+  - `$ yarn linkit`
+    - Only needs to be run once.
+      - Run `yarn dev` for subsequent builds.
+    - The `proto-snips` package is loaded and initialized as it will be for the end user
+    - If a browser does not automatically open, navigate to [http://0.0.0.0:1313](http://0.0.0.0:1313)
+      - Verify working code using your normal processes
+
+### Submit
+- Continue testing until there is **100%** coverage
+  - Any PR that fails to comply with [The TAP 100](https://node-tap.org/docs/coverage/100/) will not be able to be accepted
 - Add the new prototypical method to the [Current Modules & Methods](#current-modules--methods) list
 - Create a PR with a quick description explaining:
   - The new method's purpose
   - An example piece of code showing how to use it
   - Any other information you wish to pass along
 
----
-### Iterate
-- To view your work locally
-  - Complete the [Build](#build) process to the point where `$ yarn flow` populates the `dist` directory
-  - `$ yarn build:parcel`
-  - `$ yarn linkit`
-    - If a browser does not automatically open, navigate to [http://0.0.0.0:1313](http://0.0.0.0:1313)
-      - The `proto-snips` package is loaded and initialized as it will be for the end user
-      - Verify working code using your normal processes
-    - `linkit` only needs to be run once. Run `yarn dev` for subsequent builds.
-
 ## Current Modules & Methods
-
 View the current snippets on [github pages](https://downquark-work.github.io/downquark.packagedApp.Npm_ProtoSnippets/publish/sandbox/index.html)
 <details>
   <summary>Array</summary>
@@ -181,8 +184,8 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
 
 ### TODO: prior to removing npm prerelease semver
 - [ ] Create method to import all snippets
-- [x] Incorporate MDN's polyfills
-  - Utilizes [https://github.com/msn0/mdn-polyfills](https://github.com/msn0/mdn-polyfills)
+-  ~~Incorporate MDN's polyfills~~
+  - Decided to make this package sans-dependencies. Recommend to utilize [https://github.com/msn0/mdn-polyfills](https://github.com/msn0/mdn-polyfills)
 
 ## Mini-Roadmap
 - [ ] Include all Snippets within Sandbox

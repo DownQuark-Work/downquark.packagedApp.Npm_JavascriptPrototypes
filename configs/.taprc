@@ -1,4 +1,3 @@
-before: src/spec/make-window.js
 branches: 85
 check-coverage: true
 comments: true

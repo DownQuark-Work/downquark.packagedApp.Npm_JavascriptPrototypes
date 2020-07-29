@@ -15,11 +15,9 @@ t.test('Prototypes DNE when initted', t => {
   t.end()
 })
 
-t.test('Imported prototype and polyfill functions specified', t => {
+t.test('Imported prototype functions specified', t => {
   t.type(Prototypes.Defaults,'function', 'Default prototype function exists')
   t.type(Prototypes.include,'object', 'Default prototype object of functions exist')
-  t.type(Prototypes.Polyfills,'function', 'Default Polyfills function exists')
-  t.type(Prototypes.polyfill,'object', 'Default polyfills object of functions exist')
   t.end()
 })
 
