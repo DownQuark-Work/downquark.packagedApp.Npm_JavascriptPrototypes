@@ -26,7 +26,6 @@
     "not dead"
   ],
   "scripts": {
-    "build:parcezl": "rimraf publish/module/* && parcel build dist/* --target module && cp package.json README.md publish/module/ && yarn sedit",
     "build:dev": "rimraf publish/module/* && parcel build src/index.js --target module && cp package.json README.md publish/module/ && yarn sedit",
     "build": "flow-remove-types --all src/js -d dist/",
     "dev": "parcel publish/sandbox/index.html --target sandbox --open --port 1313",

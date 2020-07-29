@@ -1,4 +1,5 @@
-# downquark.work Snippet Manager Integrated with Prototypical Inheritance
+# JavaScript Snippets Prototypically Inherited
+##### A zero dependency package that keeps helper methods usable and exposed.
 
 <p align="center">
 
@@ -9,15 +10,19 @@
 </p>
 
 ---
-> An open source snippet manager utilizing javascript's prototypical inheritance that allows immediate integration into projects.
-> - Create a snippet that modifies a string
->   - Require and use the snippet immediately
->   - `'MySring'.mySnippetFunction()`
-> - Share your favorite snippets by making a Pull Request and see them in the next version of this package!
+> No more searching through bookmarked webpages or markdown files looking for that snippet you found six months ago. The one you remember had _something to do with an array_, but have no clue where you put it.
+> Proto-Snips is a curated open source snippet manager where the saved snippets are added to javascript primitives as soon as the package is run.
+
+_example:_
+> - Load and call _proto-snips_
+>   - `const ProtoSnips = 'require('@downquark/proto-snips').Defaults();`
+> - Use the snippet as if it were a native method
+>   - `[1,2,3,4].shuffle(); // [3,4,2,1]`
 
 ## Table of contents
 
-- [downquark.work Snippet Manager Integrated with Prototypical Inheritance](#downquarkwork-snippet-manager-integrated-with-prototypical-inheritance)
+- [JavaScript Snippets Prototypically Inherited](#javascript-snippets-prototypically-inherited)
+        - [A zero dependency package that keeps helper methods usable and exposed.](#a-zero-dependency-package-that-keeps-helper-methods-usable-and-exposed)
   - [Table of contents](#table-of-contents)
   - [Common usage](#common-usage)
   - [Installation](#installation)
@@ -28,17 +33,23 @@
     - [Iterate](#iterate)
     - [Submit](#submit)
   - [Current Modules & Methods](#current-modules--methods)
-    - [TODO: prior to removing npm prerelease semver](#todo-prior-to-removing-npm-prerelease-semver)
+    - [Prior to removing npm prerelease semver](#prior-to-removing-npm-prerelease-semver)
   - [Mini-Roadmap](#mini-roadmap)
 
 ## Common usage
 Using CommonJS for these to help differentiate between AMD/RequireJS modules commonly reused in projects. Any prototypes being used should be imported and instantiated a single time.
-You will be able to specify which prototypes you wish to by importing the `Default` set of the module, or handpicking using the `include` method.
-Currently, you can choose defaults, individuals, or add non-defaults
+You will be able to specify which prototypes you wish to by importing the `Default` set of the modules, handpicking using the `include` method, or importing everything with the `ALL` getter.
 
 ## Installation
-To import and init the defaults only:
-- `const Prototypes = require('@downquark/proto-snips').Defaults()`
+`$ npm i @downquark/proto-snips`
+- _or_
+`$ yarn @downquark/proto-snips`
+
+Then import and init the default snippets with:
+- `const ProtoSnips = require('@downquark/proto-snips').Defaults()`
+Or every snippet with:
+- `const ProtoSnips = require('@downquark/proto-snips').ALL`
+> NOTE: Due to the possibility of this package becoming large the `ALL` option is intentionally set as a _getter_. Using a different access type just cuts down on certain IDEs suggesting alphabetically sorted methods.
 
 To select and initialize non-default methods:
 ```
@@ -182,20 +193,23 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
   _Example:_|`'abc'.padStart('10', "foo") // 'foofoofabc'`|
 </details>
 
-### TODO: prior to removing npm prerelease semver
+### Prior to removing npm prerelease semver
 - [ ] Create method to import all snippets
+- [ ] Include all Snippets within Sandbox
 -  ~~Incorporate MDN's polyfills~~
   - Decided to make this package sans-dependencies. Recommend to utilize [https://github.com/msn0/mdn-polyfills](https://github.com/msn0/mdn-polyfills)
 
 ## Mini-Roadmap
-- [ ] Include all Snippets within Sandbox
 - [ ] Port relevant snippets from:
   - [ ] [30 seconds of code](https://www.30secondsofcode.org/js/p/1)
   - [ ] [web dev]https://web.dev/web-animations/
+- [ ] Only import required snippets
+  - allows for full library without having to worry about file size
 - [ ] Enable snippet management via a config / rc file
   - [ ] Enable snippet management via a GUI
 - [ ] Enable option to collect anonymous data about usage of snippets
 - [ ] Enable pattern matching to allow suggestion tooltips within the IDE
   - e.g. Developer writes something similar to `() => arr.length-1` and the IDE gives prompt to include _array.len_ and a usage example `[1,2,3].len // 2`
 - [ ] Extend to include multiple languages
-- [ ] 
+- [ ] Ability to submit snippets from within ProtoSnippet package
+- [ ] Ability to create and locally store snippets that will autobind when ProtoSnips is called
