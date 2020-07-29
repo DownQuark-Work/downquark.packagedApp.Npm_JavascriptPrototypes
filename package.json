@@ -36,7 +36,7 @@
     "flow:status": "flow status",
     "linkit": "cd publish/module && npm link && cd - && cd publish/sandbox && npm link @downquark/proto-snips && cd - && yarn dev",
     "lint": "eslint -c configs/eslint.config.js --ignore-path configs/.eslintignore",
-    "posttest:codecov": "tap --coverage-report=text-lcov | codecov -t $DQ:CODECOV::PROTOSNIPPETS",
+    "posttest:codecov": "tap --coverage-report=text-lcov | codecov -t $DQ_CODECOV__PROTOSNIPPETS",
     "sedit": "sed ' s|\\.js\",|.js\"}|g ; /main/q' <./package.json >./publish/module/package.json",
     "test:coverage": "yarn run build && tap --rcfile=configs/.taprc --strict --coverage-report=json",
     "test:bail": "yarn run build && tap --rcfile=configs/.taprc --strict --bail --save=coverage/failures.txt",
