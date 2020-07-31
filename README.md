@@ -11,11 +11,12 @@
 
 ---
 > No more searching through bookmarked webpages or markdown files looking for that snippet you found six months ago. The one you remember had _something to do with an array_, but have no clue where you put it.
+> 
 > Proto-Snips is a curated open source snippet manager where the saved snippets are added to javascript primitives as soon as the package is run.
 
 _example:_
 > - Load and call _proto-snips_
->   - `const ProtoSnips = 'require('@downquark/proto-snips').Defaults();`
+>   - `const ProtoSnips = require('@downquark/proto-snips').Defaults();`
 > - Use the snippet as if it were a native method
 >   - `[1,2,3,4].shuffle(); // [3,4,2,1]`
 
@@ -43,7 +44,7 @@ You will be able to specify which prototypes you wish to by importing the `Defau
 ## Installation
 `$ npm i @downquark/proto-snips`
 - _or_
-`$ yarn @downquark/proto-snips`
+`$ yarn add @downquark/proto-snips`
 
 Then import and init the default snippets with:
 - `const ProtoSnips = require('@downquark/proto-snips').Defaults()`
@@ -203,6 +204,7 @@ _NOTE:_|Quite a bit going on here. Please see [tests](./src/spec/console.spec.js
 - [ ] Port relevant snippets from:
   - [ ] [30 seconds of code](https://www.30secondsofcode.org/js/p/1)
   - [ ] [web dev]https://web.dev/web-animations/
+  - [ ] https://1loc.dev/
 - [ ] Only import required snippets
   - allows for full library without having to worry about file size
 - [ ] Enable snippet management via a config / rc file
